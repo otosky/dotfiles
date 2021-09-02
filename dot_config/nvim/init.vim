@@ -11,6 +11,10 @@ endif
 set background=dark
 colorscheme gruvbox
 
+nnoremap L $
+nnoremap H ^
+nnoremap <C-n> :nohl <CR>
+
 set relativenumber
 set autoindent
 set expandtab

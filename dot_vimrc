@@ -1,5 +1,10 @@
 syntax on
+
+inoremap <C-L> <Esc>
+nnoremap <C-n> :nohl <CR>
+
 set number
+set relativenumber
 
 set autoindent
 set expandtab
@@ -24,5 +29,3 @@ call plug#end()
 
 set laststatus=2
 
-inoremap <C-L> <Esc>
-nnoremap <C-n> :nohl <CR>

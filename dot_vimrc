@@ -2,6 +2,8 @@ syntax on
 
 inoremap <C-L> <Esc>
 nnoremap <C-n> :nohl <CR>
+nnoremap L $
+nnoremap H ^
 
 set number
 set relativenumber

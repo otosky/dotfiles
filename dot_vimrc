@@ -5,6 +5,8 @@ nnoremap <C-n> :nohl <CR>
 nnoremap L $
 nnoremap H ^
 
+let mapleader = "'"
+
 set number
 set relativenumber
 

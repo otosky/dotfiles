@@ -29,7 +29,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 set laststatus=2
 
+colorscheme nord

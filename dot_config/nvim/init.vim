@@ -29,3 +29,9 @@ set expandtab
 set tabstop=2 shiftwidth=2
 set smarttab
 set backspace=indent,eol,start
+
+"remove handicaps
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>

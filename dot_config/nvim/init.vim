@@ -5,8 +5,10 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'junegunn/fzf'
   Plug 'morhetz/gruvbox'
   Plug 'junegunn/fzf.vim'
+  Plug 'preservim/nerdcommenter'
 call plug#end()
 
+filetype plugin on
 " theme
 if (has("termguicolors"))
  set termguicolors
@@ -17,6 +19,9 @@ colorscheme gruvbox
 nnoremap L $
 nnoremap H ^
 nnoremap <C-n> :nohl <CR>
+
+tnoremap <Esc> <C-\><C-n>
+
 
 set relativenumber
 set autoindent

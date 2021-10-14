@@ -35,9 +35,9 @@ call plug#end()
 set laststatus=2
 
 "remove handicaps
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
+map <Up> <nop>
+map <Down> <nop>
+map <Left> <nop>
+map <Right> <nop>
 
 colorscheme nord

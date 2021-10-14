@@ -1,11 +1,13 @@
 syntax on
 
+let mapleader = "'"
+
 inoremap <C-L> <Esc>
 nnoremap <C-n> :nohl <CR>
 nnoremap L $
-nnoremap H ^
+nnoremap H 0
+nnoremap dH d0
 
-let mapleader = "'"
 
 set number
 set relativenumber
@@ -35,9 +37,13 @@ call plug#end()
 set laststatus=2
 
 "remove handicaps
-map <Up> <nop>
-map <Down> <nop>
-map <Left> <nop>
-map <Right> <nop>
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+noremap! <Up> <nop>
+noremap! <Down> <nop>
+noremap! <Left> <nop>
+noremap! <Right> <nop>
 
 colorscheme nord

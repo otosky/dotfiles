@@ -117,7 +117,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[ -f "/Users/otosky/.ghcup/env" ] && source "/Users/otosky/.ghcup/env" # ghcup-env
+# ghcup-env
+[ -f "{{ .chezmoi.homeDir }}/.ghcup/env" ] && source "{{ .chezmoi.homeDir }}/.ghcup/env"
 
 function mkcdir () {
   mkdir -p -- "$1" &&

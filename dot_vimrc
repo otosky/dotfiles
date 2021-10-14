@@ -5,8 +5,8 @@ let mapleader = "'"
 inoremap <C-L> <Esc>
 nnoremap <C-n> :nohl <CR>
 nnoremap L $
-nnoremap H 0
-nnoremap dH d0
+nnoremap H ^
+nnoremap dH d^
 
 
 set number

@@ -5,7 +5,7 @@
 # cmd - m : open -na /Applications/mpv.app $(pbpaste)
 
 alt + shift - r [
-  "PyCharm"   : false
+  "PyCharm"   ~
   *           : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"; \
               skhd --reload
 ]

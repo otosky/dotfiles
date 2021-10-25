@@ -41,7 +41,6 @@ alt - c [
 ]
 
 # swap window
-shift + cmd - x : yabai -m window --swap recent
 shift + cmd - h : yabai -m window --swap west
 shift + cmd - j : yabai -m window --swap south
 shift + cmd - k : yabai -m window --swap north
@@ -87,6 +86,10 @@ alt - 7 : yabai -m space --focus  7 || skhd -k "ctrl + alt + cmd - 7"
 alt - 8 : yabai -m space --focus  8 || skhd -k "ctrl + alt + cmd - 8"
 alt - 9 : yabai -m space --focus  9 || skhd -k "ctrl + alt + cmd - 9"
 alt - 0 : yabai -m space --focus 10 || skhd -k "ctrl + alt + cmd - 0"
+
+# send window to next space and follow
+shift + cmd - z : yabai -m window --space prev; yabai -m space --focus prev
+shift + cmd - x : yabai -m window --space next; yabai -m space --focus next
 
 # move window
 shift + ctrl - a : yabai -m window --move rel:-20:0

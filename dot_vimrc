@@ -31,12 +31,3 @@ set colorcolumn=100
 set nowrap
 set laststatus=2
 
-"remove handicaps
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-noremap! <Up> <nop>
-noremap! <Down> <nop>
-noremap! <Left> <nop>
-noremap! <Right> <nop>

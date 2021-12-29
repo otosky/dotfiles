@@ -47,7 +47,7 @@ yabai -m rule --add app="^Microsoft Outlook$" space=comm
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Slack$" space=comm 
-yabai -m rule --add app="^zoom.us$" space=zoom manage=off
+yabai -m rule --add app="^zoom\.us$" space=zoom 
 yabai -m rule --add app="^Discord$" space=social
 yabai -m rule --add app="^Preview$" manage=off
 yabai -m rule --add app="^Notion$" manage=off

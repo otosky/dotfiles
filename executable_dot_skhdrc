@@ -15,36 +15,17 @@ alt - x [
   "PyCharm"   ~
   *           : yabai -m window --focus recent
 ]
-alt - h [
+alt - n [
   "PyCharm"   ~
   *           : yabai -m window --focus west
 ]
-alt - j [
-  "PyCharm"   ~
-  *           : yabai -m window --focus south
-] 
-alt - k [
-  "PyCharm"   ~
-  *           : yabai -m window --focus north
-] 
-alt - l [
+alt - e [
   "PyCharm"   ~
   *           : yabai -m window --focus east
 ] 
-alt - z [
-  "PyCharm"   ~
-  *           : yabai -m window --focus stack.prev
-] 
-alt - c [
-  "PyCharm"   ~
-  *           : yabai -m window --focus stack.next
-]
 
-# swap window
-shift + cmd - h : yabai -m window --swap west
-shift + cmd - j : yabai -m window --swap south
-shift + cmd - k : yabai -m window --swap north
-shift + cmd - l : yabai -m window --swap east
+# rotate tree
+alt - r : yabai -m space --rotate 90
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
@@ -99,11 +80,11 @@ shift + ctrl - d : yabai -m window --move rel:20:0
 
 # resize left-right for right-hand pane
 shift + cmd - m : yabai -m window --resize left:-20:0
-shift + cmd - 0x2C : yabai -m window --resize left:20:0
+shift + cmd - o : yabai -m window --resize left:20:0
 
 # resize left-right for left-hand pane
 shift + alt - m : yabai -m window --resize right:-20:0
-shift + alt - 0x2C : yabai -m window --resize right:20:0
+shift + alt - o : yabai -m window --resize right:20:0
 
 # resize up-down
 shift + cmd - 0x2F : yabai -m window --resize bottom:0:20
@@ -118,45 +99,17 @@ ctrl + alt - k : yabai -m window --insert north
 ctrl + alt - l : yabai -m window --insert east
 ctrl + alt - i : yabai -m window --insert stack
 
-# rotate tree
-alt - r : yabai -m space --rotate 90
-
-# mirror tree y-axis
-alt - y : yabai -m space --mirror y-axis
-
-# mirror tree x-axis
-alt - x : yabai -m space --mirror x-axis
-
-# toggle desktop offset
-alt - a : yabai -m space --toggle padding && yabai -m space --toggle gap
-
-# toggle window parent zoom
-alt - d : yabai -m window --toggle zoom-parent
-
 # toggle window fullscreen zoom
 alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
-# toggle window split type
-alt - e : yabai -m window --toggle split
-
-# float / unfloat window and restore position
-# alt - t : yabai -m window --toggle float && /tmp/yabai-restore/$(yabai -m query --windows --window | jq -re '.id').restore 2>/dev/null || true
-#alt - t : yabai -m window --toggle float && yabai -m window --grid 4:4:1:1:2:2
-
-# toggle sticky (show on all spaces)
-alt - s : yabai -m window --toggle sticky
-
-# toggle topmost (keep above other windows)
-alt - o : yabai -m window --toggle topmost
-
 # toggle picture-in-picture
 alt - p : yabai -m window --toggle border && \
           yabai -m window --toggle pip
 
 # change layout of desktop
-ctrl + alt - a : yabai -m space --layout bsp
-ctrl + alt - d : yabai -m space --layout float
-ctrl + alt - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end') 
+#ctrl + alt - a : yabai -m space --layout bsp
+#ctrl + alt - d : yabai -m space --layout float
+#ctrl + alt - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end') 

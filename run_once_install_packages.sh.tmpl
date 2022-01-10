@@ -1,0 +1,37 @@
+#!/bin/sh
+
+{{ if eq .chezmoi.os "linux" -}}
+
+# technically, this should be in a bootstrap script
+curl -fsLS git.io/chezmoi -- init --apply otosky
+
+sudo apt install -y \
+  zsh \
+  fzf
+  
+chsh -s "$(which zsh)"
+
+# zsh
+mkdir -p ~/.zsh/antigen
+sudo curl -L git.io/antigen > ~/.zsh/antigen/antigen.zsh
+
+# install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+
+# neovim
+asdf plugin add neovim
+asdf install neovim O.6.1
+asdf global neovim 0.6.1
+
+# python
+asdf plugin add python
+asdf install python 3.7.10
+asdf install python 3.8.8
+asdf install python 3.9.9
+asdf global python 3.9.9
+
+asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
+asdf install poetry 1.1.12
+asdf global poetry 1.1.12
+
+{{ end -}}

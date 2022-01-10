@@ -9,13 +9,7 @@ fi
 export ZSH="{{ .chezmoi.homeDir }}/.oh-my-zsh"
 
 source {{ .chezmoi.homeDir }}/.zsh/antigen/antigen.zsh
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle asdf
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen theme romkatv/powerlevel10k
-antigen apply
+antigen init {{ .chezmoi.homeDir }}/.antigenrc
 
 bindkey -v
 alias vi="nvim"

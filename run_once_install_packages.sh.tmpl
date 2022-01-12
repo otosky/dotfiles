@@ -20,8 +20,24 @@ sudo apt update -y && sudo apt install -y \
   libreadline8 \
   libreadline-dev \
   sqlite3 \
-  libsqlite3-dev
+  libsqlite3-dev \
+  neofetch \
+  ca-certificates \
+  lsb-release \
 #  balena-etcher-electron
+
+# DOCKER
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+  | sudo gpg --yes --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+sudo getent group docker || sudo groupadd docker \
+  && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER
 
 #add a check-condition for this
 chsh -s "$(which zsh)"

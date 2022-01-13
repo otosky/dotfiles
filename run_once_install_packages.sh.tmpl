@@ -24,7 +24,7 @@ sudo apt update -y && sudo apt install -y \
   neofetch \
   ca-certificates \
   lsb-release \
-#  balena-etcher-electron
+  libfprint
 
 # DOCKER
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
@@ -85,7 +85,9 @@ asdf global java adoptopenjdk-8.0.312+7
 
 asdf plugin add golang
 
-curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+if [ ! -d {{ .chezmoi.homeDir }}/.ghcup ]; then 
+  curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+fi
 
 # Extra shit to install
 # renoise, reaper, pycharm, vscode, obs, kicad, gimp, obsidian, 1pass, slack, zoom, signal, discord, google-drive, dropbox, intellij

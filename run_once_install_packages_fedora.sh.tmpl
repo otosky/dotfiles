@@ -2,9 +2,6 @@
 
 {{ if eq .chezmoi.os "linux" -}}
 
-# technically, this should be in a bootstrap script
-sh -c $(curl -fsLS git.io/chezmoi) -- init --apply otosky
-
 sudo dnf install dnf-plugins-core
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/ \
   && rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc

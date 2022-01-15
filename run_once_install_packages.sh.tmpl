@@ -5,10 +5,20 @@
 # technically, this should be in a bootstrap script
 sh -c $(curl -fsLS git.io/chezmoi) -- init --apply otosky
 
-# Balena Etcher
+# add extra gpg keys
 
-#curl -1sLf 'https://dl.cloudsmith.io/public/balena/etcher/setup.deb.sh' \
-#   | sudo -E bash
+# Brave Browser
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+  https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" \
+  | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+# Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+  | sudo gpg --yes --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt update -y && sudo apt install -y \
   zsh \
@@ -24,20 +34,24 @@ sudo apt update -y && sudo apt install -y \
   neofetch \
   ca-certificates \
   lsb-release \
-  libfprint
-
-# DOCKER
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
-  | sudo gpg --yes --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+  brave-browser \
+  docker-ce \
+  docker-ce-cli \
+  containerd.io
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER
+
+# Fingerprint reader - TODO see if this command actually works!
+#curl http://launchpadlibrarian.net/566838488/libfprint-2-2_1.94.1+tod1-0ubuntu2_amd64.deb | sudo dpkg -i
+
+sudo apt install -y \
+  sway \
+  wofi \
+  mako-notifier \
+  wl-clipboard \
+  waybar \
+  maim
 
 #add a check-condition for this
 chsh -s "$(which zsh)"
@@ -90,7 +104,7 @@ if [ ! -d {{ .chezmoi.homeDir }}/.ghcup ]; then
 fi
 
 # Extra shit to install
-# renoise, reaper, pycharm, vscode, obs, kicad, gimp, obsidian, 1pass, slack, zoom, signal, discord, google-drive, dropbox, intellij
+# renoise, reaper, pycharm, vscode, obs, kicad, gimp, obsidian, 1pass, slack, zoom, signal, discord, google-drive, dropbox, intellij, balena-etcher
 
 #framework specific
 # fix fingerprint reader

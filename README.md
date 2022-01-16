@@ -40,3 +40,10 @@ brew install \
   tree \
   the_silver_searcher 
 ```
+
+## Framework Laptop Specific
+
+- setting Deep Sleep for Suspend:
+  - https://community.frame.work/t/fedora-34-on-the-framework-laptop/2723/49
+
+- turn off Automatic Brightness in Display

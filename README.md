@@ -2,6 +2,12 @@
 
 Managed via [`chezmoi`](https://github.com/twpayne/chezmoi)
 
+## Install
+```sh
+sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply otosky
+```
+Note this will try to run a bootstrap script. See run_once...
+
 ## Components:
 Shell: [oh-my-zsh](https://ohmyz.sh/)
 
@@ -34,4 +40,3 @@ brew install \
   tree \
   the_silver_searcher 
 ```
-

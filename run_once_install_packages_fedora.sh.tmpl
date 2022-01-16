@@ -16,6 +16,8 @@ sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https:/
 
 sudo dnf config-manager --set-enabled google-chrome
 
+sudo dnf copr enable eddsalkield/swaylock-effects -y
+
 sudo dnf install -y \
   util-linux-user \
   zsh \
@@ -28,12 +30,17 @@ sudo dnf install -y \
   mako \
   waybar \
   wlsunset \
+  swayidle \
+  swaylock-effects \
+  light \
   wl-clipboard \
   maim \
   google-chrome-stable \
   brave-browser \
   docker-ce docker-ce-cli containerd.io \
-  1password
+  1password \
+  kicad 
+#  gimp  
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER

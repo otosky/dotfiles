@@ -10,6 +10,11 @@ sudo dnf config-manager \
     --add-repo \
     https://download.docker.com/linux/fedora/docker-ce.repo
 
+sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
+sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" \
+  > /etc/yum.repos.d/1password.repo'
+
+
 sudo dnf install -y \
   util-linux-user \
   zsh \
@@ -25,7 +30,8 @@ sudo dnf install -y \
   wl-clipboard \
   maim \
   brave-browser \
-  docker-ce docker-ce-cli containerd.io
+  docker-ce docker-ce-cli containerd.io \
+  1password
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER

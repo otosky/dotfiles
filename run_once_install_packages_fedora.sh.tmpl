@@ -3,6 +3,7 @@
 {{ if eq .chezmoi.os "linux" -}}
 
 sudo dnf install dnf-plugins-core -y
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/ \
   && sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
@@ -18,7 +19,7 @@ sudo dnf config-manager --set-enabled google-chrome
 
 sudo dnf copr enable eddsalkield/swaylock-effects -y
 
-sudo dnf install -y \
+sudo dnf update -y && sudo dnf install -y \
   util-linux-user \
   zsh \
   fzf \
@@ -41,11 +42,15 @@ sudo dnf install -y \
   brave-browser \
   docker-ce docker-ce-cli containerd.io \
   1password \
+  discord \
   kicad 
 #  gimp  
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER
+
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
 
 #add a check-condition for this
 chsh -s "$(which zsh)"

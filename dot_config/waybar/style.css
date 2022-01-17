@@ -60,7 +60,7 @@
 
 /* The whole bar */
 #waybar {
-    background: @bg;
+    background: transparent;
     color: @light;
     font-family: Hasklig ExtraLight;
     font-size: 11px;
@@ -145,7 +145,7 @@
 	padding-left: 5px;
 	padding-right: 5px;
 	color: @light;
-	background: @workspaces;
+	/*background: @workspaces;*/
 }
 
 #workspaces button.focused {
@@ -162,48 +162,40 @@
 	margin-left: 40px;
 }
 
-#custom-alsa {
-	background: @sound;
-}
-
 #network {
-    background: @network;
+    /*background: @network;*/
 }
 
 #memory {
-    background: @memory;
+    /*background: @memory;*/
 }
 
 #cpu {
-    background: @cpu;
+    /*background: @cpu;*/
 }
 
 #temperature {
-    background: @temp;
-}
-
-#custom-layout {
-    background: @layout;
+    /*background: @temp;*/
 }
 
 #battery {
-    background: @battery;
+    /*background: @battery;*/
 }
 
 #backlight {
-	background: @backlight;
+	/*background: @backlight;*/
 }
 
 #clock.date {
-    background: @date;
+    /*background: @date;*/
 }
 
 #clock.time {
-    background: @time;
+    /*background: @time;*/
 }
 
 #pulseaudio { /* Unsused but kept for those who needs it */
-    background: @sound;
+    /*background: @sound;*/
 }
 
 #pulseaudio.muted {

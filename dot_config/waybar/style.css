@@ -62,7 +62,7 @@
 #waybar {
     background: @bg;
     color: @light;
-    font-family: Noto Sans;
+    font-family: Hasklig ExtraLight;
     font-size: 11px;
     font-weight: bold;
 }

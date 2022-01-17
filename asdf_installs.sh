@@ -26,6 +26,10 @@ asdf global java adoptopenjdk-8.0.312+7
 
 asdf plugin add golang
 
+asdf plugin add nodejs
+asdf install nodejs 17.3.0
+asdf global nodejs 17.3.0
+
 # utilities
 asdf plugin-add terraform
 asdf install terraform 1.1.3

@@ -1,6 +1,7 @@
 ### Variables
 #
 set $mod Mod4
+set $alt Mod1
 set $left h
 set $down j
 set $up k
@@ -78,6 +79,12 @@ default_border pixel 2
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    
+    # Shut Down
+    bindsym $mod+$alt+q exec systemctl poweroff
+
+    # Lock
+    bindsym $mod+$alt+l exec $lock
 #
 # Moving around:
 #

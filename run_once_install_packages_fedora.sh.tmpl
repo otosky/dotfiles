@@ -18,7 +18,7 @@ sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https:/
 sudo dnf config-manager --set-enabled google-chrome
 
 sudo dnf copr enable eddsalkield/swaylock-effects -y
-sudo dnf copr enable @kicad/kicad
+sudo dnf copr enable @kicad/kicad -y
 
 sudo dnf update -y && sudo dnf install -y \
   util-linux-user \

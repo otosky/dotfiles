@@ -27,6 +27,7 @@ sudo dnf update -y && sudo dnf install -y \
   kitty \
   neofetch \
   openssl-devel bzip2-devel libffi-devel zlib-devel readline-devel sqlite\
+  gtk-devel \
   pulseaudio-utils \
   libappindicator \
   sway \
@@ -45,7 +46,6 @@ sudo dnf update -y && sudo dnf install -y \
   1password \
   discord \
   kicad 
-#  gimp  
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER
@@ -53,7 +53,6 @@ sudo getent group docker || sudo groupadd docker \
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
-#add a check-condition for this
 chsh -s "$(which zsh)"
 
 # zsh
@@ -69,8 +68,15 @@ if [ ! -d {{ .chezmoi.homeDir }}/.ghcup ]; then
   curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 fi
 
+# dragon for drag-and-drop, necessary for certain web UIs
+if [ ! -f "$(which dragon)" ]; then
+  git clone https://github.com/mwh/dragon.git {{ .chezmoi.homeDir }}/Downloads/dragon
+  cd {{ .chezmoi.homeDir }}/Downloads/dragon && sudo make PREFIX=/usr/local/bin install
+  cd {{ .chezmoi.homeDir }}
+fi
+
 # Extra shit to install
-# renoise, reaper, pycharm, vscode, obs, kicad, gimp, obsidian, 1pass, slack, zoom, signal, discord, google-drive, dropbox, intellij, balena-etcher
+# renoise, reaper, pycharm, vscode, obs, gimp, obsidian, slack, zoom, signal, discord, google-drive, dropbox, intellij, balena-etcher
 
 #framework specific
 # set deep sleep

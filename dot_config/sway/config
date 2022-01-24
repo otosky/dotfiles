@@ -12,7 +12,8 @@ set $wallpaper $home/.config/sway/wallpaper.jpg
 set $lockscreen $home/.config/sway/lockscreen.jpg
 
 set $term kitty
-set $menu wofi --show drun --no-actions --insensitive --prompt 'Run' | xargs swaymsg exec --
+set $menu ulauncher-toggle | xargs swaymsg exec --
+set $menu_wofi wofi --show drun --no-actions --insensitive --prompt 'Run' | xargs swaymsg exec --
 set $browser brave-browser --enable-features=UseOzonePlatform --ozone-platform=wayland
 set $lock swaylock -f -i $lockscreen -s fill
 set $laptop_display eDP-1
@@ -68,8 +69,13 @@ default_border pixel 2
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    exec ulauncher --hide-window | xargs swaymsg exec --
+    for_window [app_id="ulauncher"] floating enable, border none
+    bindsym $mod+Space exec $menu
     
+    # backup launcher
+    bindsym $mod+d exec $menu_wofi
+
     # Start browser
     bindsym $mod+b exec $browser
 
@@ -168,7 +174,7 @@ default_border pixel 2
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    #bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -218,3 +224,4 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+

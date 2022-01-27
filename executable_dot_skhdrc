@@ -61,6 +61,10 @@ shift + alt - n : yabai -m space --create
 # destroy desktop
 cmd + alt - w : yabai -m space --destroy
 
+# cycle focus through spaces
+alt - t : yabai -m space --focus next || yabai -m space --focus 1
+alt + shift - t : yabai -m space --focus prev || yabai -m space --focus "$(yabai -m query --spaces --display | jq 'max_by(.index).index')"
+
 # fast focus desktop
 alt - 1 : yabai -m space --focus  1 || skhd -k "ctrl + alt + cmd - 1"
 alt - 2 : yabai -m space --focus  2 || skhd -k "ctrl + alt + cmd - 2"

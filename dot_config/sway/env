@@ -1,2 +1,7 @@
 XDG_DATA_DIRS=/home/olivertosky/.local/share/applications:$XDG_DATA_DIRS
 XDG_CURRENT_DESKTOP=sway
+_JAVA_AWT_WM_NONREPARENTING=1
+
+AUTOENV_FILE_ENTER=~/.autoenv.zsh
+AUTOENV_FILE_LEAVE=~/.autoenv.zsh
+AUTOENV_HANDLE_LEAVE=1

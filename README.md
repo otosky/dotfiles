@@ -37,6 +37,9 @@ Status Bar:
 - set up systemd script to enable wake-up from suspend via external keyboard
   - https://askubuntu.com/a/1155666
 
+- set udev rules for qmk and bootloaders
+  - https://docs.qmk.fm/#/faq_build?id=linux-udev-rules
+
 ### MacOS:
 Tile Manager:
 - [yabai](https://github.com/koekeishiya/yabai)

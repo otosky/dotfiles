@@ -39,7 +39,9 @@ sudo dnf update -y && sudo dnf install -y \
   brave-browser \
   docker-ce docker-ce-cli containerd.io \
   1password \
-  kicad 
+  kicad \
+  autoconf automake ccache dtc dfu-util g++ gcc libtool ninja-build cmake xz \
+  blueman
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER

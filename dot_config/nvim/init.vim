@@ -12,7 +12,6 @@ endif
 
 call plug#begin("~/.config/nvim/plugged")
   Plug 'neovim/nvim-lspconfig'
-"  Plug 'itchyny/lightline.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'morhetz/gruvbox'
   Plug 'arcticicestudio/nord-vim'
@@ -20,6 +19,7 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'junegunn/fzf.vim'
   Plug 'preservim/nerdcommenter'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 filetype plugin on
 

@@ -20,6 +20,7 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'preservim/nerdcommenter'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
 filetype plugin on
 
@@ -37,3 +38,6 @@ require'lspconfig'.pyright.setup{}
 require'lspconfig'.hls.setup{}
 EOF
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+
+"gitgutter
+set updatetime=100

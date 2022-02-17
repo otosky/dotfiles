@@ -10,35 +10,9 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall
 endif
 
-call plug#begin("~/.config/nvim/plugged")
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'vim-airline/vim-airline'
-  Plug 'morhetz/gruvbox'
-  Plug 'arcticicestudio/nord-vim'
-  Plug 'junegunn/fzf'
-  Plug 'junegunn/fzf.vim'
-  Plug 'preservim/nerdcommenter'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-rhubarb'
-  Plug 'airblade/vim-gitgutter'
-call plug#end()
-filetype plugin on
+source $HOME/.config/nvim/init/plug.vim
 
-" theme
-if (has("termguicolors"))
- set termguicolors
-endif
+source $HOME/.config/nvim/plugin/colors.vim
+source $HOME/.config/nvim/plugin/lsp.vim
+source $HOME/.config/nvim/plugin/git.vim
 
-set background=dark
-colorscheme gruvbox
-
-" LSP-related
-lua << EOF
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.hls.setup{}
-EOF
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-
-"gitgutter
-set updatetime=100

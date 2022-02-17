@@ -30,4 +30,5 @@ set incsearch
 set colorcolumn=100
 set nowrap
 set laststatus=2
+set scrolloff=8
 

@@ -1,7 +1,7 @@
 source ~/.vimrc
 
 let g:python_host_prog  = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '~/.asdf/shims/python'
 
 " PLUGS
 " install vim-plug if not exists

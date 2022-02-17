@@ -20,6 +20,7 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'preservim/nerdcommenter'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-rhubarb'
   Plug 'airblade/vim-gitgutter'
 call plug#end()
 filetype plugin on

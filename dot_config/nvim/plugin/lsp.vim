@@ -4,6 +4,8 @@ local util = require('lspconfig/util')
 local path = util.path
 
 local function get_python_path(workspace)
+  -- https://github.com/neovim/nvim-lspconfig/issues/500
+
   -- Use activated virtualenv.
   if vim.env.VIRTUAL_ENV then
     return path.join(vim.env.VIRTUAL_ENV, 'bin', 'python')
@@ -28,6 +30,23 @@ require'lspconfig'.pyright.setup {
     client.config.settings.python.pythonPath = get_python_path(client.config.root_dir)
   end,
   }
+
+
+--require'lspconfig'.pylsp.setup {
+--  capabilities = capabilities,
+--  cmd = { 'path/to/venv/bin/pylsp' },
+--  on_init = function(client)
+--    client.config.settings.pylsp.plugins.jedi.environment = get_python_path(client.config.root_dir)
+--  end,
+--  settings = {
+--    pylsp = {
+--      plugins = {
+--        pylint = {enabled = true, executable = "path/to/venv/bin/pylint"}
+--        }
+--      }
+--    }
+--  }
+
 require'lspconfig'.hls.setup{}
 EOF
 

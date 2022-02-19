@@ -14,6 +14,8 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
+  Plug 'windwp/nvim-autopairs'
+  Plug 'Vimjas/vim-python-pep8-indent'
   
   "Git
   Plug 'tpope/vim-fugitive'
@@ -32,4 +34,8 @@ call plug#begin("~/.config/nvim/plugged")
 
 call plug#end()
 filetype plugin on
+filetype indent on
 
+lua << EOF
+  require('nvim-autopairs').setup{}
+EOF

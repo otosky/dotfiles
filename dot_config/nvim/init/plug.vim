@@ -1,7 +1,8 @@
 call plug#begin("~/.config/nvim/plugged")
   
   "Theme
-  Plug 'vim-airline/vim-airline'
+  Plug 'nvim-lualine/lualine.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'morhetz/gruvbox'
   Plug 'arcticicestudio/nord-vim'
   
@@ -38,4 +39,7 @@ filetype indent on
 
 lua << EOF
   require('nvim-autopairs').setup{}
+  require('lualine').setup {
+    options = { theme = 'gruvbox' }
+    }
 EOF

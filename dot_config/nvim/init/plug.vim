@@ -32,6 +32,7 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'hrsh7th/cmp-path'
   Plug 'saadparwaiz1/cmp_luasnip'
   Plug 'L3MON4D3/LuaSnip'
+  Plug 'mattn/efm-langserver'
 
 call plug#end()
 filetype plugin on

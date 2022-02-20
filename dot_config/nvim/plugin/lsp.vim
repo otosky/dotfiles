@@ -1,4 +1,5 @@
 lua << EOF
+local lspconfig = require("lspconfig")
 local util = require('lspconfig/util')
 
 local path = util.path
@@ -23,16 +24,36 @@ local function get_python_path(workspace)
   return final
 end
 
+local on_attach = function(client)
+  if client.resolved_capabilities.document_formatting then
+    vim.cmd [[augroup Format]]
+    vim.cmd [[autocmd! * <buffer>]]
+    vim.cmd [[autocmd BufWritePost <buffer> :lua vim.lsp.buf.formatting({})]]
+    vim.cmd [[augroup END]]
+  end
+end
+
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require'lspconfig'.pyright.setup {
+-- https://github.com/mattn/efm-langserver
+-- config at .config/efm-langserver/config.yaml
+lspconfig.efm.setup {
+    capabilities = capabilities,
+    cmd = { "efm-langserver" },
+    on_attach = on_attach,
+    init_options = { documentFormatting = true },
+    root_dir = vim.loop.cwd,
+  }
+
+
+lspconfig.pyright.setup {
   on_init = function(client)
     client.config.settings.python.pythonPath = get_python_path(client.config.root_dir)
   end,
   }
 
 
---require'lspconfig'.pylsp.setup {
+--lspconfig.pylsp.setup {
 --  capabilities = capabilities,
 --  cmd = { 'path/to/venv/bin/pylsp' },
 --  on_init = function(client)
@@ -47,7 +68,7 @@ require'lspconfig'.pyright.setup {
 --    }
 --  }
 
-require'lspconfig'.hls.setup{}
+lspconfig.hls.setup{}
 EOF
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>

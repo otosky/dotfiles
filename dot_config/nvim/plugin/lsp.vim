@@ -28,7 +28,7 @@ local on_attach = function(client)
   if client.resolved_capabilities.document_formatting then
     vim.cmd [[augroup Format]]
     vim.cmd [[autocmd! * <buffer>]]
-    vim.cmd [[autocmd BufWritePost <buffer> :lua vim.lsp.buf.formatting({})]]
+    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
     vim.cmd [[augroup END]]
   end
 end
@@ -76,4 +76,4 @@ nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> grn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> gh <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gca <cmd>lua vim.lsp.buf.code_action()<CR>
-
+nnoremap <silent> gf <cmd>lua vim.lsp.buf.formatting()<CR>

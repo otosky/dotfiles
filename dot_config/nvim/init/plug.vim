@@ -6,10 +6,11 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'morhetz/gruvbox'
   Plug 'arcticicestudio/nord-vim'
   
-  "File Nav & Search
+  "File Nav, Search, and Terminal
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
-  
+  Plug 'akinsho/toggleterm.nvim'
+
   "Helpful editing commands
   "Plug 'preservim/nerdcommenter'
   Plug 'michaeljsmith/vim-indent-object'
@@ -43,4 +44,5 @@ lua << EOF
   require('lualine').setup {
     options = { theme = 'gruvbox' }
     }
+  require("user.toggleterm")
 EOF

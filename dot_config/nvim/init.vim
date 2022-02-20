@@ -11,3 +11,4 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 source $HOME/.config/nvim/init/plug.vim
+

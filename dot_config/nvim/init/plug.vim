@@ -27,6 +27,7 @@ call plug#begin("~/.config/nvim/plugged")
 
   "LSP & Autocomplete
   Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
@@ -45,4 +46,5 @@ lua << EOF
     options = { theme = 'gruvbox' }
     }
   require("user.toggleterm")
+  require("user.lsp")
 EOF

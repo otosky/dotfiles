@@ -25,6 +25,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # ghcup-env
 [ -f "{{ .chezmoi.homeDir }}/.ghcup/env" ] && source "{{ .chezmoi.homeDir }}/.ghcup/env"
 
+# python/poetry
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+
 function mkcdir () {
   mkdir -p -- "$1" &&
   cd -P -- "$1"

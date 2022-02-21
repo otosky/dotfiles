@@ -43,6 +43,7 @@ return packer.startup(function(use)
   -- Basic
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"
   use "kyazdani42/nvim-web-devicons"
   use "nvim-lualine/lualine.nvim"
 

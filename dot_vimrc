@@ -1,7 +1,7 @@
 syntax on
 
 " remaps
-let mapleader = "'"
+let mapleader = ";"
 inoremap <C-L> <Esc>
 nnoremap <C-n> :nohl <CR>
 nnoremap Y y$

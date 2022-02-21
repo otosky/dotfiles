@@ -1,6 +1,8 @@
 vim.cmd('source ~/.vimrc')
 
+require "user.options"
 require "user.plugins"
+require "user.autocommands"
 require "user.impatient"
 require "user.lualine"
 require "user.cmp"

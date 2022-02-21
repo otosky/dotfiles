@@ -47,6 +47,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 	use("nvim-lualine/lualine.nvim")
 	use("lewis6991/impatient.nvim")
+	use("folke/which-key.nvim")
 
 	-- Editing
 	use("michaeljsmith/vim-indent-object")
@@ -64,8 +65,8 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("morhetz/gruvbox")
-	-- use("shaunsingh/nord.nvim")
-  use 'arcticicestudio/nord-vim'
+	-- use("shaunsingh/nord.nvim") -- until they disable bold this is no-go
+	use("arcticicestudio/nord-vim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin

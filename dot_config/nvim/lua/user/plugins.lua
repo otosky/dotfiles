@@ -97,10 +97,10 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Git
-	--use "lewis6991/gitsigns.nvim"
+	use "lewis6991/gitsigns.nvim"
 	use("tpope/vim-fugitive")
 	use("tpope/vim-rhubarb")
-	use("airblade/vim-gitgutter")
+	-- use("airblade/vim-gitgutter")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

@@ -32,6 +32,6 @@ set nowrap
 set laststatus=2
 set scrolloff=8
 
-filetype plugin on
-filetype indent on
+" filetype plugin on
+" filetype indent on
 

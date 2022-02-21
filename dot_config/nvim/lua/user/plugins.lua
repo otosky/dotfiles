@@ -46,6 +46,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
   use "kyazdani42/nvim-web-devicons"
   use "nvim-lualine/lualine.nvim"
+  use "lewis6991/impatient.nvim"
 
   -- Editing
   use 'michaeljsmith/vim-indent-object'
@@ -87,11 +88,11 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
 
   -- Treesitter
-  -- use {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   run = ":TSUpdate",
-  -- }
-  -- use "JoosepAlviste/nvim-ts-context-commentstring"
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
   --use "lewis6991/gitsigns.nvim"

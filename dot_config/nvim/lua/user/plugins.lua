@@ -88,6 +88,7 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 	-- Treesitter
 	use({
@@ -97,7 +98,7 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Git
-	use "lewis6991/gitsigns.nvim"
+	use("lewis6991/gitsigns.nvim")
 	use("tpope/vim-fugitive")
 	use("tpope/vim-rhubarb")
 

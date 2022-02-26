@@ -67,6 +67,8 @@ return packer.startup(function(use)
 	use("morhetz/gruvbox")
 	-- use("shaunsingh/nord.nvim") -- until they disable bold this is no-go
 	use("arcticicestudio/nord-vim")
+	use("folke/tokyonight.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin

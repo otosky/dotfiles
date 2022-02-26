@@ -65,10 +65,17 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("morhetz/gruvbox")
+	use("sainnhe/gruvbox-material")
 	-- use("shaunsingh/nord.nvim") -- until they disable bold this is no-go
 	use("arcticicestudio/nord-vim")
 	use("folke/tokyonight.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("michaeldyrynda/carbon")
+	use("mangeshrex/everblush.vim")
+	use("ayu-theme/ayu-vim")
+	use("pineapplegiant/spaceduck")
+	use("liuchengxu/space-vim-dark")
+	use("doums/darcula")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin

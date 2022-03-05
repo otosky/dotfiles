@@ -30,6 +30,14 @@ asdf plugin add nodejs
 asdf install nodejs 17.3.0
 asdf global nodejs 17.3.0
 
+asdf plugin add erlang
+asdf install erlang 24.0.4
+asdf global erlang 24.0.4
+
+asdf plugin add elixir
+asdf install elixir 1.12.2-otp-24
+asdf global elixir 1.12.2-otp-24
+
 # utilities
 asdf plugin-add terraform
 asdf install terraform 1.1.3

@@ -2,7 +2,6 @@ vim.g.python3_host_prog = '/usr/local/bin/python'
 
 local options = {
   -- backup = false,                          -- creates a backup file
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   fileencoding = "utf-8",                  -- the encoding written to a file
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore

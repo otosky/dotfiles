@@ -17,7 +17,7 @@ set $menu_wofi wofi --show drun --no-actions --insensitive --prompt 'Run' | xarg
 set $browser brave-browser --enable-features=UseOzonePlatform --ozone-platform=wayland
 set $lock swaylock -f -i $lockscreen -s fill
 set $laptop_display eDP-1
-
+bindsym Print exec grim $home/Pictures/screenshot.png
 
 ### Inputs
 # You can get the names of your inputs by running: swaymsg -t get_inputs

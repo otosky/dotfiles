@@ -5,8 +5,8 @@ if asdf list | grep -q '0.6.1'; then
   echo 'Neovim 0.6.1 already installed via asdf'
 else
   asdf plugin add neovim
-  asdf install neovim O.6.1
-  asdf global neovim 0.6.1
+  asdf install neovim O.7.0
+  asdf global neovim 0.7.0
 fi
 
 # python

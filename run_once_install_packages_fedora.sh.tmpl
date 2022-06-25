@@ -46,7 +46,8 @@ sudo dnf update -y && sudo dnf install -y \
   wxGTK wxGTK-devel wxGTK-gl wxGTK-media \
   cifs-utils \
   gmp-devel.x86_64 \
-  brasero
+  brasero \
+  wireguard-tools
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER

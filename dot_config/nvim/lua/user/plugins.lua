@@ -60,7 +60,6 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs")
 	use("Vimjas/vim-python-pep8-indent")
   use("matze/vim-move")
-  -- use("terryma/vim-multiple-cursors")
 
   -- Note-taking
   use("vimwiki/vimwiki")

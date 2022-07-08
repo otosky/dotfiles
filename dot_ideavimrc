@@ -3,7 +3,13 @@ source ~/.vimrc
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'tommcdo/vim-exchange'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'easymotion/vim-easymotion'
 
 set surround
 set commentary
 set vim-indent-object
+set exchange
+set multiple-cursors
+set easymotion

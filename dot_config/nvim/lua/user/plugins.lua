@@ -49,6 +49,10 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use("folke/which-key.nvim")
 
+  -- Motions
+  -- use("ggandor/lightspeed.nvim")
+  -- use("ggandor/leap.nvim")
+
 	-- Editing
 	use("michaeljsmith/vim-indent-object")
 	use("tpope/vim-commentary")
@@ -56,6 +60,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs")
 	use("Vimjas/vim-python-pep8-indent")
   use("matze/vim-move")
+  -- use("terryma/vim-multiple-cursors")
 
   -- Note-taking
   use("vimwiki/vimwiki")

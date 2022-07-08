@@ -55,6 +55,12 @@ return packer.startup(function(use)
 	use("tpope/vim-surround")
 	use("windwp/nvim-autopairs")
 	use("Vimjas/vim-python-pep8-indent")
+  use("matze/vim-move")
+
+  -- Note-taking
+  use("vimwiki/vimwiki")
+  -- use("alok/notational-fzf-vim")
+  use("michal-h21/vim-zettel")
 
 	-- Terminal
 	use("akinsho/toggleterm.nvim")

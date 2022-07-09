@@ -49,9 +49,9 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use("folke/which-key.nvim")
 
-  -- Motions
-  -- use("ggandor/lightspeed.nvim")
-  -- use("ggandor/leap.nvim")
+	-- Motions
+	-- use("ggandor/lightspeed.nvim")
+	-- use("ggandor/leap.nvim")
 
 	-- Editing
 	use("michaeljsmith/vim-indent-object")
@@ -59,12 +59,12 @@ return packer.startup(function(use)
 	use("tpope/vim-surround")
 	use("windwp/nvim-autopairs")
 	use("Vimjas/vim-python-pep8-indent")
-  use("matze/vim-move")
+	use("matze/vim-move")
 
-  -- Note-taking
-  use("vimwiki/vimwiki")
-  -- use("alok/notational-fzf-vim")
-  use("michal-h21/vim-zettel")
+	-- Note-taking
+	use("vimwiki/vimwiki")
+	-- use("alok/notational-fzf-vim")
+	use("michal-h21/vim-zettel")
 
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
@@ -105,8 +105,12 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
-  -- language-specifics
-  use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }})
+	-- DAP
+	use("mfussenegger/nvim-dap")
+
+	-- language-specifics
+	use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" } })
+	use({ "scalameta/nvim-metals", requires = { "nvim-lua/plenary.nvim", "mfussenegger/nvim-dap" } })
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

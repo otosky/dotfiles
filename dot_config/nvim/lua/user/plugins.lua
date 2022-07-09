@@ -107,6 +107,7 @@ return packer.startup(function(use)
 
 	-- DAP
 	use("mfussenegger/nvim-dap")
+  use("mfussenegger/nvim-dap-python")
 
 	-- language-specifics
 	use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" } })

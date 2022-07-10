@@ -9,6 +9,7 @@ local function map(mode, lhs, rhs, opts)
 	api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- lsp
 map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
@@ -24,6 +25,7 @@ map("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>')
 map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
+-- dap
 map("n", "<leader>dc", [[<cmd>lua require"dap".continue()<CR>]])
 map("n", "<leader>dr", [[<cmd>lua require"dap".repl.toggle()<CR>]])
 map("n", "<leader>dK", [[<cmd>lua require"dap.ui.widgets".hover()<CR>]])

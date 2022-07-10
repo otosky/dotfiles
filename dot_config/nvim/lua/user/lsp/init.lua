@@ -12,3 +12,7 @@ require("elixir").setup()
 
 -- handle outside of lspconfig
 require("user.lsp.metals")
+
+-- dap clients
+require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+require("dap-python").test_runner = 'pytest'

@@ -91,5 +91,25 @@
       "  values:",
       "    ${0}"
     ]
+  },
+  "flux Kustomization": {
+    "prefix": "flux-kustomization",
+    "description": "Flux Kustomization",
+    "body": [
+      "# https://fluxcd.io/flux/components/kustomize/kustomization/",
+      "apiVersion: kustomize.toolkit.fluxcd.io/v1beta2",
+      "kind: Kustomization",
+      "metadata:",
+      "  name: ${1:name}",
+      "  namespace: ${2:default}",
+      "spec:",
+      "  interval: 10m",
+      "  targetNamespace: ${3:default}",
+      "  sourceRef:",
+      "    kind: GitRepository",
+      "    name: ${1:name}",
+      "  path: ${4:./path}",
+      "  prune: true"
+    ]
   }
 }

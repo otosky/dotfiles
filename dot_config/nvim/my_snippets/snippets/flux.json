@@ -87,7 +87,7 @@
       "        kind: HelmRepository",
       "        name: ${3:helm-repo-name}",
       "        namespace: ${4:flux-system}",
-      "        interval: 5m",
+      "      interval: 5m",
       "  values:",
       "    ${0}"
     ]

@@ -18,6 +18,8 @@ inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>k :m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 
+xnoremap <leader>p "_dP
+
 " editor settings
 set number
 set relativenumber

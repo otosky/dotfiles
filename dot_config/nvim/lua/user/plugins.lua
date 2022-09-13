@@ -113,6 +113,7 @@ return packer.startup(function(use)
 	-- language-specifics
 	use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" } })
 	use({ "scalameta/nvim-metals", requires = { "nvim-lua/plenary.nvim", "mfussenegger/nvim-dap" } })
+	use({ "mechatroner/rainbow_csv" })
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

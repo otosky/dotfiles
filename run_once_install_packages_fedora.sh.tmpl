@@ -28,7 +28,6 @@ sudo dnf update -y && sudo dnf install -y \
   kitty \
   neofetch \
   openssl-devel bzip2-devel libffi-devel zlib-devel readline-devel sqlite\
-  # gtk-devel \
   lxpolkit \
   pulseaudio-utils \
   acpid.x86_64 \
@@ -49,7 +48,8 @@ sudo dnf update -y && sudo dnf install -y \
   gmp-devel.x86_64 \
   brasero \
   wireguard-tools \
-  go-task
+  go-task \
+  age 
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER

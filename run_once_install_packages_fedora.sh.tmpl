@@ -28,7 +28,7 @@ sudo dnf update -y && sudo dnf install -y \
   kitty \
   neofetch \
   openssl-devel bzip2-devel libffi-devel zlib-devel readline-devel sqlite\
-  gtk-devel \
+  # gtk-devel \
   lxpolkit \
   pulseaudio-utils \
   acpid.x86_64 \
@@ -48,7 +48,8 @@ sudo dnf update -y && sudo dnf install -y \
   cifs-utils \
   gmp-devel.x86_64 \
   brasero \
-  wireguard-tools
+  wireguard-tools \
+  go-task
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER
@@ -81,6 +82,11 @@ if [ ! -f "$(which dragon)" ]; then
   git clone https://github.com/mwh/dragon.git {{ .chezmoi.homeDir }}/Downloads/dragon
   cd {{ .chezmoi.homeDir }}/Downloads/dragon && sudo make PREFIX=/usr/local/bin install
   cd {{ .chezmoi.homeDir }}
+fi
+
+if [ ! -f "$(which sops)" ]; then
+  SOPS_VERSION=3.7.3
+  sudo dnf install -y https://github.com/mozilla/sops/releases/download/v${SOPS_VERSION}/sops-${SOPS_VERSION}-1.x86_64.rpm
 fi
 
 # Extra shit to install

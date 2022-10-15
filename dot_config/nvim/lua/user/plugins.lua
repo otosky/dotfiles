@@ -114,6 +114,14 @@ return packer.startup(function(use)
 	use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" } })
 	use({ "scalameta/nvim-metals", requires = { "nvim-lua/plenary.nvim", "mfussenegger/nvim-dap" } })
 	use({ "mechatroner/rainbow_csv" })
+	use({
+		"cfmeyers/dbt.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"rcarriga/nvim-notify",
+		},
+	})
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

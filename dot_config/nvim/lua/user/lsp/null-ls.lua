@@ -12,6 +12,18 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.black.with({ extra_args = { "--fast" } }),
+		formatting.isort,
+		formatting.brittany,
+		formatting.mix,
 		formatting.stylua,
+		formatting.prettier,
+    formatting.scalafmt,
+    formatting.shfmt,
+    formatting.sqlfluff,
+    formatting.terraform_fmt,
+    formatting.yamlfmt,
+    diagnostics.hadolint,
+    diagnostics.yamllint,
+    -- diagnostics.mypy,
 	},
 })

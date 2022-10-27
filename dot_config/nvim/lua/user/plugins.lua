@@ -72,6 +72,8 @@ return packer.startup(function(use)
 	-- File Nav & Search
 	use("junegunn/fzf")
 	use("junegunn/fzf.vim")
+	use({ "ThePrimeagen/git-worktree.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use({ "ThePrimeagen/harpoon", requires = { "nvim-lua/plenary.nvim" } })
 
 	-- Colorschemes
 	use("morhetz/gruvbox")

@@ -1,9 +1,5 @@
-vim.cmd [[
-try
-  let g:nord_italic = 1
-  colorscheme nord
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
-]]
+vim.g.nord_italic = false
+vim.g.nord_bold = false
+
+-- Load the colorscheme
+require("nord").set()

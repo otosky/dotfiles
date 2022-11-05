@@ -78,8 +78,9 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("morhetz/gruvbox")
 	use("sainnhe/gruvbox-material")
-	-- use("shaunsingh/nord.nvim") -- until they disable bold this is no-go
-	use("arcticicestudio/nord-vim")
+	-- https://github.com/shaunsingh/nord.nvim/issues/113
+	use({ "shaunsingh/nord.nvim", commit = "78f5f001709b5b321a35dcdc44549ef93185e024" })
+	-- use("arcticicestudio/nord-vim")
 	use("folke/tokyonight.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("michaeldyrynda/carbon")

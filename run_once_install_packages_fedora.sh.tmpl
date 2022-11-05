@@ -50,7 +50,8 @@ sudo dnf update -y && sudo dnf install -y \
   wireguard-tools \
   go-task \
   age \
-  direnv
+  direnv \
+  tio
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER

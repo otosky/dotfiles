@@ -13,3 +13,10 @@ set vim-indent-object
 set exchange
 set multiple-cursors
 set easymotion
+
+" use `:actionlist` to see all available actions
+nnoremap <Leader>lr :action RenameElement<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gr :action FindUsages<CR>
+
+" Helpful reference: https://towardsdatascience.com/the-essential-ideavim-remaps-291d4cd3971b

@@ -1,12 +1,10 @@
 vim.g.python3_host_prog = "/usr/local/bin/python"
 
 local options = {
-	-- backup = false,                          -- creates a backup file
 	completeopt = { "menuone", "noinsert", "noselect" }, -- mostly just for cmp
 	fileencoding = "utf-8", -- the encoding written to a file
 	showmode = false, -- we don't need to see things like -- INSERT -- anymore
 	showtabline = 2, -- always show tabs
-	swapfile = false, -- creates a swapfile
 	termguicolors = true, -- set term gui colors (most terminals support this)
 	undofile = true, -- enable persistent undo
 	updatetime = 300, -- faster completion (4000ms default)

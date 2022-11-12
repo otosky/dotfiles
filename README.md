@@ -10,8 +10,7 @@ Note this will try to run a bootstrap script on a Linux environment. See run_onc
 
 ## Components:
 Shell: 
-- [oh-my-zsh](https://ohmyz.sh/)
-- [antigen](https://github.com/zsh-users/antigen) for plugin management
+- [antidote](https://github.com/mattmc3/antidote) for plugin management
 
 Terminal-themes:
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
@@ -46,8 +45,8 @@ Tile Manager:
 - [skhd](https://github.com/koekeishiya/skhd)
 
 Status Bar:
-- [spacebar](https://github.com/cmacrae/spacebar)
-
+- [simple-bar](https://github.com/Jean-Tinland/simple-bar)
+  - via [Ubersicht](http://tracesof.net/uebersicht/)
 
 ```sh
 brew install \
@@ -56,7 +55,6 @@ brew install \
   homebrew/cask-fonts/font-fontawesome \
   koekeishiya/formulae/yabai \
   koekeishiya/formulae/skhd \
-  cmacrae/formulae/spacebar \
   git-delta \
   fzf \
   ripgrep \

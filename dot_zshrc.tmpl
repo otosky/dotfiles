@@ -7,9 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="{{ .chezmoi.homeDir }}/.oh-my-zsh"
-
 source {{ .chezmoi.homeDir }}/.zsh/antigen/antigen.zsh
 antigen init {{ .chezmoi.homeDir }}/.antigenrc
 
@@ -27,23 +24,6 @@ enable-fzf-tab
 
 export EDITOR="$(which nvim)"
 
-export AUTOENV_FILE_LEAVE=.autoenv.zsh
-
-###### ALIASES ######
-
-alias vi="nvim"
-alias icat="kitty +kitten icat"
-alias wgup="wg-quick up wg0"
-alias wgdown="wg-quick down wg0"
-
-
-###### FUNCTIONS ######
-function mkcdir () {
-  mkdir -p -- "$1" &&
-  cd -P -- "$1"
-}
-
-
 ###### LANGUAGES ######
 
 # ghcup-env
@@ -56,5 +36,12 @@ export POETRY_VIRTUALENVS_IN_PROJECT=true
 eval "$(direnv hook zsh)"
 export DIRENV_LOG_FORMAT=
 
+export AUTOENV_FILE_LEAVE=.autoenv.zsh
+
 ###### KEYBINDS ######
 bindkey -M viins '^j' fzf-cd-widget
+
+# source any funcs & aliases
+fpath=( "${HOME}/.config/zsh/functions" "${fpath[@]}" )
+autoload -Uz $fpath[1]/*(.:t)
+source "${HOME}/.config/zsh/aliases"

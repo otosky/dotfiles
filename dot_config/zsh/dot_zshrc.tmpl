@@ -9,8 +9,6 @@ fi
 
 autoload -Uz compinit && compinit
 
-export ZDOTDIR={{ .chezmoi.homeDir }}/.config/zsh
-
 # Setup & Source Antidote:
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote

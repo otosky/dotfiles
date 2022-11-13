@@ -10,6 +10,8 @@ autoload -Uz compinit && compinit
 
 # Setup & Source Antidote:
 ANTIDOTE_DIR=$ZDOTDIR/.antidote
+zstyle ':antidote:bundle' use-friendly-names 'yes'
+zstyle ':antidote:bundle' file $ZDOTDIR/.zplugins.txt
 
 if [[ ! $ZDOTDIR/.zplugins.zsh -nt $ZDOTDIR/.zplugins ]]; then
   [[ -e $ANTIDOTE_DIR ]] \

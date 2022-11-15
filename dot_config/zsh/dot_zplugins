@@ -22,6 +22,8 @@ alexiszamanidis/zsh-git-fzf
 romkatv/powerlevel10k
 
 # deferred
+olets/zsh-abbr kind:defer
+$ZDOTDIR/plugins/abbreviations
 zdharma-continuum/fast-syntax-highlighting kind:defer
 
 # completions

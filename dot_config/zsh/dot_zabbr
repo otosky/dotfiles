@@ -3,6 +3,8 @@ abbr icat="kitty +kitten icat"
 abbr wgup="wg-quick up wg0"
 abbr wgdown="wg-quick down wg0"
 
+abbr cdr='z'
+
 abbr ga='git add'
 abbr gaa='git add --all'
 abbr gba='git branch -a'

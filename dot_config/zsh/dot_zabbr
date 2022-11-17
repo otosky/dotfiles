@@ -40,3 +40,8 @@ abbr rce='chezmoi edit'
 abbr rcy='chezmoi apply'  
 abbr rccd='chezmoi cd'
 abbr rca='chezmoi add'
+
+abbr tffmt='terraform fmt'
+abbr tffmta='terraform fmt -recursive'
+abbr tfp='terraform plan'
+abbr tfv='terraform validate'

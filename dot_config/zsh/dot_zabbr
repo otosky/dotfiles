@@ -22,3 +22,7 @@ abbr gp='git push'
 abbr grhh='git reset --hard'
 abbr groh='git reset origin/$(git_current_branch) --hard'
 abbr gst='git status'
+
+abbr gwta='git worktree add'
+abbr gwtl='git worktree list'
+abbr gwtr='git worktree remove'

@@ -15,9 +15,6 @@ Aloxaf/fzf-tab
 agkozak/zsh-z
 Tarrasch/zsh-autoenv
 
-# git
-alexiszamanidis/zsh-git-fzf
-
 # prompt
 romkatv/powerlevel10k
 

@@ -1,0 +1,49 @@
+#! /usr/bin/fish
+
+abbr vi "nvim"
+abbr icat "kitty +kitten icat"
+abbr wgup "wg-quick up wg0"
+abbr wgdown "wg-quick down wg0"
+
+abbr cdr 'z'
+
+abbr ga 'git add'
+abbr gaa 'git add --all'
+abbr gba 'git branch -a'
+abbr gbd 'git branch -d'
+abbr gbD 'git branch -D'
+abbr gbl 'git blame -b -w'
+abbr gc 'git commit -v'
+abbr gco 'git checkout'
+abbr gd 'git diff'
+abbr gfo 'git fetch origin'
+abbr gfa 'git fetch --all --prune'
+abbr gpsup 'git push --set-upstream origin $(git_current_branch)'
+abbr gl 'git pull'
+abbr gm 'git merge'
+abbr gmom 'git merge origin/$(git_main_branch)'
+abbr gp 'git push'
+abbr grhh 'git reset --hard'
+abbr groh 'git reset origin/$(git_current_branch) --hard'
+abbr gst 'git status'
+
+abbr gwta 'git worktree add'
+abbr gwtl 'git worktree list'
+abbr gwtr 'git worktree remove'
+
+abbr k 'kubectl'
+abbr kn 'kubectl ns'
+abbr kgp 'kubectl get pods'
+abbr kl 'kubectl logs'
+
+# think "rc-edit":
+abbr rce 'chezmoi edit'
+# think "rc-yes":
+abbr rcy 'chezmoi apply'  
+abbr rccd 'chezmoi cd'
+abbr rca 'chezmoi add'
+
+abbr tffmt 'terraform fmt'
+abbr tffmta 'terraform fmt -recursive'
+abbr tfp 'terraform plan'
+abbr tfv 'terraform validate'

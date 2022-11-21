@@ -1,6 +1,7 @@
 if not test -e $HOME/.config/fish/functions/fisher.fish
   echo 'Installing fisher'
   curl -sL https://git.io/fisher | source 
+  fisher update
 end
 
 set -gx fish_key_bindings fish_vi_key_bindings

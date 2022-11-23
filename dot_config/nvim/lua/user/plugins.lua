@@ -111,7 +111,12 @@ return packer.startup(function(use)
 	-- DAP
 	use("mfussenegger/nvim-dap")
 	use("mfussenegger/nvim-dap-python")
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	-- https://github.com/rcarriga/nvim-dap-ui/issues/181
+	use({
+		"rcarriga/nvim-dap-ui",
+		tag = "v2.5.0",
+		requires = { "mfussenegger/nvim-dap" },
+	})
 
 	-- language-specifics
 	use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" } })
@@ -129,6 +134,7 @@ return packer.startup(function(use)
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use("nvim-telescope/telescope-project.nvim")
 
 	-- Treesitter
 	use({

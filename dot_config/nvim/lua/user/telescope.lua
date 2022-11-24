@@ -95,7 +95,6 @@ telescope.setup({
 		},
 		project = {
 			base_dirs = {
-				"~/simplebet",
 				"~/personal",
 			},
 			theme = "dropdown",

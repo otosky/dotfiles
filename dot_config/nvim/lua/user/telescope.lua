@@ -110,3 +110,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 keymap("n", "<C-Space>", "<cmd>Telescope<CR>", opts)
+keymap("n", "<leader>f", "<cmd>Telescope find_files theme=dropdown previewer=false<CR>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers theme=dropdown previewer=false<CR>", opts)
+keymap("n", "<leader>F", "<cmd>Telescope live_grep theme=ivy<CR>", opts)
+keymap("n", "<leader>P", "<cmd>Telescope project project<CR>", opts)

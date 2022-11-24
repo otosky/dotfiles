@@ -79,16 +79,10 @@ local opts = {
 }
 
 local mappings = {
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
-	},
-	["f"] = {
-		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Find files",
-	},
-	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["P"] = { "<cmd>lua require('telescope').extensions.project.project()<cr>", "Projects" },
+	["b"] = "Buffers",
+	["f"] = "Find files",
+	["F"] = "Live Grep",
+	["P"] = "Projects",
 
 	p = {
 		name = "Packer",

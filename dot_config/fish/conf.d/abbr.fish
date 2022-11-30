@@ -4,6 +4,7 @@ abbr vi "nvim"
 abbr icat "kitty +kitten icat"
 abbr wgup "wg-quick up wg0"
 abbr wgdown "wg-quick down wg0"
+abbr lsa "ls -a"
 
 abbr cdr 'z'
 
@@ -33,8 +34,10 @@ abbr gwtr 'git worktree remove'
 
 abbr k 'kubectl'
 abbr kn 'kubectl ns'
+abbr kgn 'kubectl get nodes'
 abbr kgp 'kubectl get pods'
 abbr kl 'kubectl logs'
+abbr ku 'k9s'
 
 # think "rc-edit":
 abbr rce 'chezmoi edit'
@@ -47,3 +50,7 @@ abbr tffmt 'terraform fmt'
 abbr tffmta 'terraform fmt -recursive'
 abbr tfp 'terraform plan'
 abbr tfv 'terraform validate'
+
+abbr fluxrk 'flux reconcile kustomization'
+abbr fluxsus 'flux suspend'
+abbr fluxres 'flux resume'

@@ -114,3 +114,4 @@ keymap("n", "<leader>f", "<cmd>Telescope find_files theme=dropdown previewer=fal
 keymap("n", "<leader>b", "<cmd>Telescope buffers theme=dropdown previewer=false<CR>", opts)
 keymap("n", "<leader>F", "<cmd>Telescope live_grep theme=ivy<CR>", opts)
 keymap("n", "<leader>P", "<cmd>Telescope project project<CR>", opts)
+keymap("n", "<leader>rf", "<cmd>Telescope oldfiles theme=dropdown previewer=false<CR>", opts)

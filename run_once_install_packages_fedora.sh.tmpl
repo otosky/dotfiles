@@ -8,8 +8,9 @@ sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.co
   && sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 sudo dnf config-manager \
-    --add-repo \
-    https://download.docker.com/linux/fedora/docker-ce.repo
+    --add-repo https://download.docker.com/linux/fedora/docker-ce.repo \
+    --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+
 
 sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
 sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" \
@@ -54,7 +55,8 @@ sudo dnf update -y && sudo dnf install -y \
   direnv \
   tio \
   hyperfine \
-  yamllint
+  yamllint \
+  gh
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER

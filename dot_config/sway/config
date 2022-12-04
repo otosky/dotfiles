@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 set $home /home/olivertosky
-set $wallpaper $home/.config/sway/wallpaper.jpg
+set $wallpaper $home/.config/sway/wallpaper_nord
 set $lockscreen $home/.config/sway/lockscreen.jpg
 
 set $term kitty

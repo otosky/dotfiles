@@ -3,6 +3,7 @@ abbr icat="kitty +kitten icat"
 abbr wgup="wg-quick up wg0"
 abbr wgdown="wg-quick down wg0"
 abbr lsa="ls -a"
+abbr kitty_theme="kitty +kitten themes --reload-in=all"
 
 abbr cdr='z'
 

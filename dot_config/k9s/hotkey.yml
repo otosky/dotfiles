@@ -1,0 +1,21 @@
+hotKey:
+  shift-1:
+    shortCut: Shift-1
+    description: View Pods
+    command: pods
+  shift-2:
+    shortCut: Shift-2
+    description: View Services
+    command: svc
+  shift-3:
+    shortCut: Shift-3
+    description: View Deployments
+    command: dp
+  shift-4:
+    shortCut: Shift-4
+    description: View Nodes
+    command: nodes
+  shift-5:
+    shortCut: Shift-5
+    description: View Flux HelmReleases
+    command: hr

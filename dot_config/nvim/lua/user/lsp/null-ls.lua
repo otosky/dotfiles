@@ -20,7 +20,6 @@ null_ls.setup({
     formatting.scalafmt,
     formatting.shfmt,
     formatting.sqlfluff,
-    formatting.terraform_fmt,
     formatting.yamlfmt,
     diagnostics.hadolint,
     diagnostics.yamllint,

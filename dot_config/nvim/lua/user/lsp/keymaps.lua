@@ -2,11 +2,11 @@ local api = vim.api
 local cmd = vim.cmd
 
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	api.nvim_set_keymap(mode, lhs, rhs, options)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- lsp
@@ -20,7 +20,7 @@ map("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>')
 map("n", "gl", '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>')
 map("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>')
 map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
-cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+cmd([[ command! Format execute 'lua vim.lsp.buf.format()' ]])
 
 -- dap
 map("n", "<leader>dc", [[<cmd>lua require"dap".continue()<CR>]])

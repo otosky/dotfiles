@@ -5,6 +5,6 @@ vim.cmd [[
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
-    autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+    autocmd BufWritePre * lua vim.lsp.buf.format()
   augroup end
 ]]

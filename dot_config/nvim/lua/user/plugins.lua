@@ -41,17 +41,13 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	-- Basic
-	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	use("wbthomason/packer.nvim")
+	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("kyazdani42/nvim-web-devicons")
 	use("nvim-lualine/lualine.nvim")
 	use("lewis6991/impatient.nvim")
 	use("folke/which-key.nvim")
-
-	-- Motions
-	-- use("ggandor/lightspeed.nvim")
-	-- use("ggandor/leap.nvim")
 
 	-- Editing
 	use("michaeljsmith/vim-indent-object")
@@ -64,7 +60,6 @@ return packer.startup(function(use)
 
 	-- Note-taking
 	use("vimwiki/vimwiki")
-	-- use("alok/notational-fzf-vim")
 	use("michal-h21/vim-zettel")
 
 	-- Terminal
@@ -87,7 +82,6 @@ return packer.startup(function(use)
 	use("sainnhe/gruvbox-material")
 	-- https://github.com/shaunsingh/nord.nvim/issues/113
 	use({ "shaunsingh/nord.nvim", commit = "78f5f001709b5b321a35dcdc44549ef93185e024" })
-	-- use("arcticicestudio/nord-vim")
 	use("folke/tokyonight.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("michaeldyrynda/carbon")
@@ -97,6 +91,7 @@ return packer.startup(function(use)
 	use("liuchengxu/space-vim-dark")
 	use("doums/darcula")
 	use("nyoom-engineering/oxocarbon.nvim")
+	use("rose-pine/neovim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin

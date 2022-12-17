@@ -83,8 +83,6 @@ telescope.setup({
 		--   picker_config_key = value,
 		--   ...
 		-- }
-		-- Now the picker_config_key will be applied every time you call this
-		-- builtin picker
 	},
 	extensions = {
 		fzf = {
@@ -108,13 +106,15 @@ telescope.load_extension("file_browser")
 
 -- Bindings
 local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
-keymap("n", "<C-Space>", "<cmd>Telescope<CR>", opts)
-keymap("n", "<leader>ff", "<cmd>Telescope find_files theme=dropdown previewer=false<CR>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers theme=dropdown previewer=false<CR>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep theme=ivy<CR>", opts)
-keymap("n", "<leader>fp", "<cmd>Telescope project project<CR>", opts)
-keymap("n", "<leader>fr", "<cmd>Telescope oldfiles theme=dropdown previewer=false<CR>", opts)
-keymap("n", "<leader>fb", "<cmd>Telescope file_browser theme=dropdown<CR>", opts)
-keymap("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", opts)
+local builtin = require("telescope.builtin")
+local ext = telescope.extensions
+keymap("n", "<C-Space>", builtin.builtin, opts)
+keymap("n", "<leader>b", builtin.buffers, opts)
+keymap("n", "<leader>ff", builtin.find_files, opts)
+keymap("n", "<leader>fg", builtin.live_grep, opts)
+keymap("n", "<leader>fr", builtin.oldfiles, opts)
+keymap("n", "<leader>fk", builtin.keymaps, opts)
+keymap("n", "<leader>fp", ext.project.project, opts)
+keymap("n", "<leader>fb", ext.file_browser.file_browser, opts)

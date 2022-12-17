@@ -104,6 +104,7 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 telescope.load_extension("project")
+telescope.load_extension("file_browser")
 
 -- Bindings
 local opts = { noremap = true, silent = true }

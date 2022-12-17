@@ -70,6 +70,12 @@ return packer.startup(function(use)
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
 
+	-- Telescope
+	use("nvim-telescope/telescope.nvim")
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use("nvim-telescope/telescope-project.nvim")
+	use("nvim-telescope/telescope-file-browser.nvim")
+
 	-- File Nav & Search
 	use("junegunn/fzf")
 	use("junegunn/fzf.vim")
@@ -132,12 +138,6 @@ return packer.startup(function(use)
 			"rcarriga/nvim-notify",
 		},
 	})
-
-	-- Telescope
-	use("nvim-telescope/telescope.nvim")
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use("nvim-telescope/telescope-project.nvim")
-	use("nvim-telescope/telescope-file-browser.nvim")
 
 	-- Treesitter
 	use({

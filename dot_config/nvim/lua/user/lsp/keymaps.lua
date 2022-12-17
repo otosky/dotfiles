@@ -1,36 +1,42 @@
-local api = vim.api
 local cmd = vim.cmd
 
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	api.nvim_set_keymap(mode, lhs, rhs, options)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- lsp
-map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-map("n", "<leader>rn", "<cmd>lua vim.buf.rename()<CR>")
-map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-map("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>')
-map("n", "gl", '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>')
-map("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>')
-map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
-cmd([[ command! Format execute 'lua vim.lsp.buf.format()' ]])
+map("n", "gD", vim.lsp.buf.declaration)
+map("n", "gd", vim.lsp.buf.definition)
+map("n", "gi", vim.lsp.buf.implementation)
+map("n", "gr", vim.lsp.buf.references)
+map("n", "K", vim.lsp.buf.hover)
+map("n", "<leader>rn", vim.lsp.buf.rename)
+map("n", "<C-k>", vim.lsp.buf.signature_help)
+map("n", "<leader>q", vim.diagnostic.setloclist)
+map("n", "gl", function()
+  vim.diagnostic.open_float(0, { scope = "line" })
+end)
+map("n", "[d", function()
+  vim.diagnostic.goto_prev({ border = "rounded" })
+end)
+map("n", "]d", function()
+  vim.diagnostic.goto_next({ border = "rounded" })
+end)
 
 -- dap
-map("n", "<leader>dc", [[<cmd>lua require"dap".continue()<CR>]])
-map("n", "<leader>dr", [[<cmd>lua require"dap".repl.toggle()<CR>]])
-map("n", "<leader>dK", [[<cmd>lua require"dap.ui.widgets".hover()<CR>]])
-map("n", "<leader>dt", [[<cmd>lua require"dap".toggle_breakpoint()<CR>]])
-map("n", "<leader>dso", [[<cmd>lua require"dap".step_over()<CR>]])
-map("n", "<leader>dsi", [[<cmd>lua require"dap".step_into()<CR>]])
-map("n", "<leader>dl", [[<cmd>lua require"dap".run_last()<CR>]])
-map("n", "<leader>dn", [[<cmd>lua require('dap-python').test_method()<CR>]])
-map("n", "<leader>df", [[<cmd>lua require('dap-python').test_class()<CR>]])
-map("n", [[<leader>ds<esc>]], [[<cmd>lua require('dap-python').debug_selection()<CR>]])
+local dap = require("dap")
+local dap_py = require("dap-python")
+map("n", "<leader>dc", dap.continue)
+map("n", "<leader>dr", dap.repl.toggle)
+map("n", "<leader>dK", require("dap.ui.widgets").hover)
+map("n", "<leader>dt", dap.toggle_breakpoint)
+map("n", "<leader>dso", dap.step_over)
+map("n", "<leader>dsi", dap.step_into)
+map("n", "<leader>dl", dap.run_last)
+map("n", "<leader>dn", dap_py.test_method)
+map("n", "<leader>df", dap_py.test_class)
+map("n", "<leader>ds<esc>", dap_py.debug_selection)

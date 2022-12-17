@@ -35,6 +35,13 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
+-- lua needs extra settings to handle vim runtime globals
+require("lspconfig").sumneko_lua.setup({
+	on_attach = handler.on_attach,
+	capabilities = handler.capabilities,
+	settings = require("user.lsp.settings.sumneko_lua").settings,
+})
+
 require("user.lsp.keymaps")
 require("user.lsp.null-ls")
 require("user.lsp.dap")

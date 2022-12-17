@@ -43,7 +43,7 @@ abbr ku 'k9s'
 abbr rce 'chezmoi edit'
 # think "rc-yes":
 abbr rcy 'chezmoi apply'  
-abbr rccd 'chezmoi cd'
+abbr rccd 'cd ~/.local/share/chezmoi' # I don't like how chezmoi cd spawns a subshell
 abbr rca 'chezmoi add'
 
 abbr tffmt 'terraform fmt'

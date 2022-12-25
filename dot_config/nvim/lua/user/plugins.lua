@@ -57,6 +57,7 @@ return packer.startup(function(use)
 	use("Vimjas/vim-python-pep8-indent")
 	use("matze/vim-move")
 	use("lukas-reineke/indent-blankline.nvim")
+	use("ap/vim-css-color")
 
 	-- Note-taking
 	use("vimwiki/vimwiki")

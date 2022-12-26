@@ -13,6 +13,7 @@ set -gx DIRENV_LOG_FORMAT ''
 status is-interactive || exit
 
 fish_add_path $HOME/bin/
+fish_add_path $HOME/.krew/bin
 source ~/.asdf/asdf.fish
 direnv hook fish | source
 

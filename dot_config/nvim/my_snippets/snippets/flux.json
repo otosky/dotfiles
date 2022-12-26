@@ -111,5 +111,15 @@
       "  path: ${4:./path}",
       "  prune: true"
     ]
+  },
+  "k8s namespace": {
+    "prefix": "k-ns",
+    "description": "Kubernetes Namespace",
+    "body": [
+      "apiVersion: v1",
+      "kind: Namespace",
+      "metadata:",
+      "  name: ${1:name}"
+    ]
   }
 }

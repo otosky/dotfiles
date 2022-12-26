@@ -104,17 +104,30 @@ telescope.load_extension("fzf")
 telescope.load_extension("project")
 telescope.load_extension("file_browser")
 
+--- Merge two tables to one.
+function merge(t1, t2)
+	local res = {}
+
+	for _, table in ipairs({ t1, t2 }) do
+		for k, v in pairs(table) do
+			res[k] = v
+		end
+	end
+
+	return res
+end
+
 -- Bindings
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
 local builtin = require("telescope.builtin")
 local ext = telescope.extensions
-keymap("n", "<C-Space>", builtin.builtin, opts)
-keymap("n", "<leader>b", builtin.buffers, opts)
-keymap("n", "<leader>ff", builtin.find_files, opts)
-keymap("n", "<leader>fg", builtin.live_grep, opts)
-keymap("n", "<leader>fr", builtin.oldfiles, opts)
-keymap("n", "<leader>fk", builtin.keymaps, opts)
-keymap("n", "<leader>fp", ext.project.project, opts)
-keymap("n", "<leader>fb", ext.file_browser.file_browser, opts)
+keymap("n", "<C-Space>", builtin.builtin, merge(opts, { desc = "Open Telescope" }))
+keymap("n", "<leader>b", builtin.buffers, merge(opts, { desc = "Show Buffers" }))
+keymap("n", "<leader>ff", builtin.find_files, merge(opts, { desc = "Find Files" }))
+keymap("n", "<leader>fg", builtin.live_grep, merge(opts, { desc = "Live Grep" }))
+keymap("n", "<leader>fr", builtin.oldfiles, merge(opts, { desc = "Find Recent Files" }))
+keymap("n", "<leader>fk", builtin.keymaps, merge(opts, { desc = "Search Keymaps" }))
+keymap("n", "<leader>fp", ext.project.project, merge(opts, { desc = "Telescope Project Extension" }))
+keymap("n", "<leader>fb", ext.file_browser.file_browser, merge(opts, { desc = "File Browser" }))

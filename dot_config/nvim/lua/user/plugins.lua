@@ -1,156 +1,118 @@
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
 		"git",
 		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
 	})
-	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
-
--- Have packer use a popup window
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
-})
-
--- Install your plugins here
-return packer.startup(function(use)
+require("lazy").setup({
 	-- Basic
-	use("wbthomason/packer.nvim")
-	use("nvim-lua/popup.nvim")
-	use("nvim-lua/plenary.nvim")
-	use("kyazdani42/nvim-web-devicons")
-	use("nvim-lualine/lualine.nvim")
-	use("lewis6991/impatient.nvim")
-	use("folke/which-key.nvim")
+	"wbthomason/packer.nvim",
+	"nvim-lua/popup.nvim",
+	"nvim-lua/plenary.nvim",
+	"kyazdani42/nvim-web-devicons",
+	"nvim-lualine/lualine.nvim",
+	"lewis6991/impatient.nvim",
+	"folke/which-key.nvim",
 
 	-- Editing
-	use("michaeljsmith/vim-indent-object")
-	use("tpope/vim-commentary")
-	use("tpope/vim-surround")
-	use("windwp/nvim-autopairs")
-	use("Vimjas/vim-python-pep8-indent")
-	use("matze/vim-move")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("ap/vim-css-color")
+	"michaeljsmith/vim-indent-object",
+	"tpope/vim-commentary",
+	"tpope/vim-surround",
+	"windwp/nvim-autopairs",
+	"Vimjas/vim-python-pep8-indent",
+	"matze/vim-move",
+	"lukas-reineke/indent-blankline.nvim",
+	"ap/vim-css-color",
 
 	-- Note-taking
-	use("vimwiki/vimwiki")
-	use("michal-h21/vim-zettel")
+	"vimwiki/vimwiki",
+	"michal-h21/vim-zettel",
 
 	-- Terminal
-	use("akinsho/toggleterm.nvim")
+	"akinsho/toggleterm.nvim",
 
 	-- Telescope
-	use("nvim-telescope/telescope.nvim")
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use("nvim-telescope/telescope-project.nvim")
-	use("nvim-telescope/telescope-file-browser.nvim")
+	"nvim-telescope/telescope.nvim",
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	"nvim-telescope/telescope-project.nvim",
+	"nvim-telescope/telescope-file-browser.nvim",
 
 	-- File Nav & Search
-	use("junegunn/fzf")
-	use("junegunn/fzf.vim")
-	use({ "ThePrimeagen/git-worktree.nvim", requires = { "nvim-lua/plenary.nvim" } })
-	use({ "ThePrimeagen/harpoon", requires = { "nvim-lua/plenary.nvim" } })
+	"junegunn/fzf",
+	"junegunn/fzf.vim",
+	{ "ThePrimeagen/git-worktree.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+	{ "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
 
 	-- Colorschemes
-	use("morhetz/gruvbox")
-	use("sainnhe/gruvbox-material")
+	"morhetz/gruvbox",
+	"sainnhe/gruvbox-material",
 	-- https://github.com/shaunsingh/nord.nvim/issues/113
-	use({ "shaunsingh/nord.nvim", commit = "78f5f001709b5b321a35dcdc44549ef93185e024" })
-	use("folke/tokyonight.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("michaeldyrynda/carbon")
-	use("mangeshrex/everblush.vim")
-	use("ayu-theme/ayu-vim")
-	use("pineapplegiant/spaceduck")
-	use("liuchengxu/space-vim-dark")
-	use("doums/darcula")
-	use("nyoom-engineering/oxocarbon.nvim")
-	use("rose-pine/neovim")
+	{ "shaunsingh/nord.nvim", commit = "78f5f001709b5b321a35dcdc44549ef93185e024" },
+	"folke/tokyonight.nvim",
+	{ "catppuccin/nvim", as = "catppuccin" },
+	"michaeldyrynda/carbon",
+	"mangeshrex/everblush.vim",
+	"ayu-theme/ayu-vim",
+	"pineapplegiant/spaceduck",
+	"liuchengxu/space-vim-dark",
+	"doums/darcula",
+	"nyoom-engineering/oxocarbon.nvim",
+	"rose-pine/neovim",
 
 	-- cmp plugins
-	use("hrsh7th/nvim-cmp") -- The completion plugin
-	use("hrsh7th/cmp-buffer") -- buffer completions
-	use("hrsh7th/cmp-path") -- path completions
-	use("hrsh7th/cmp-cmdline") -- cmdline completions
-	use("saadparwaiz1/cmp_luasnip") -- snippet completions
-	use("hrsh7th/cmp-nvim-lsp")
+	"hrsh7th/nvim-cmp", -- The completion plugin
+	"hrsh7th/cmp-buffer", -- buffer completions
+	"hrsh7th/cmp-path", -- path completions
+	"hrsh7th/cmp-cmdline", -- cmdline completions
+	"saadparwaiz1/cmp_luasnip", -- snippet completions
+	"hrsh7th/cmp-nvim-lsp",
 
 	-- snippets
-	use("L3MON4D3/LuaSnip") --snippet engine
-	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+	"L3MON4D3/LuaSnip", --snippet engine
+	"rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
 	-- LSP
-	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	-- use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	"neovim/nvim-lspconfig", -- enable LSP
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
 
 	-- DAP
-	use("mfussenegger/nvim-dap")
-	use("mfussenegger/nvim-dap-python")
+	"mfussenegger/nvim-dap",
+	"mfussenegger/nvim-dap-python",
 	-- https://github.com/rcarriga/nvim-dap-ui/issues/181
-	use({
+	{
 		"rcarriga/nvim-dap-ui",
 		tag = "v2.5.0",
-		requires = { "mfussenegger/nvim-dap" },
-	})
+		dependencies = { "mfussenegger/nvim-dap" },
+	},
 
 	-- language-specifics
-	use({ "mhanberg/elixir.nvim", requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" } })
-	use({ "scalameta/nvim-metals", requires = { "nvim-lua/plenary.nvim", "mfussenegger/nvim-dap" } })
-	use({ "mechatroner/rainbow_csv" })
-	use({
+	{ "mhanberg/elixir.nvim", dependencies = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" } },
+	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim", "mfussenegger/nvim-dap" } },
+	{ "mechatroner/rainbow_csv" },
+	{
 		"cfmeyers/dbt.nvim",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 			"rcarriga/nvim-notify",
 		},
-	})
+	},
 
 	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	})
-	use("JoosepAlviste/nvim-ts-context-commentstring")
+	"nvim-treesitter/nvim-treesitter",
+	"JoosepAlviste/nvim-ts-context-commentstring",
 
 	-- Git
-	use("lewis6991/gitsigns.nvim")
-	use("tpope/vim-fugitive")
-	use("tpope/vim-rhubarb")
-
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
-end)
+	"lewis6991/gitsigns.nvim",
+	"tpope/vim-fugitive",
+	"tpope/vim-rhubarb",
+})

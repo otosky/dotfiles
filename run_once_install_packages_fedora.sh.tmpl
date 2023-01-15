@@ -41,7 +41,7 @@ sudo dnf update -y && sudo dnf install -y \
   docker-ce docker-ce-cli containerd.io \
   1password \
   kicad \
-  autoconf automake ccache dtc dfu-util g++ gcc libtool ninja-build cmake xz \
+  meson autoconf automake ccache dtc dfu-util g++ gcc libtool ninja-build cmake xz \
   libusb-devel.x86_64 \
   blueman \
   libiodbc unixODBC-devel erlang-odbc \
@@ -57,7 +57,8 @@ sudo dnf update -y && sudo dnf install -y \
   hyperfine \
   yamllint \
   gh \
-  qt5-qtbase-devel expat-devel 
+  qt5-qtbase-devel expat-devel \
+  wayland-protocols-devel
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER

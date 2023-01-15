@@ -56,7 +56,8 @@ sudo dnf update -y && sudo dnf install -y \
   tio \
   hyperfine \
   yamllint \
-  gh
+  gh \
+  qt5-qtbase-devel expat-devel 
 
 sudo getent group docker || sudo groupadd docker \
   && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER

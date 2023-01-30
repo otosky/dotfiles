@@ -16,11 +16,17 @@ require("lazy").setup({
 	"wbthomason/packer.nvim",
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
-	"kyazdani42/nvim-web-devicons",
+	"nvim-tree/nvim-web-devicons",
 	"nvim-lualine/lualine.nvim",
 	"lewis6991/impatient.nvim",
 	"folke/which-key.nvim",
-
+	{
+		"goolord/alpha-nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("alpha").setup(require("alpha.themes.startify").config)
+		end,
+	},
 	-- Editing
 	"michaeljsmith/vim-indent-object",
 	"tpope/vim-commentary",

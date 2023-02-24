@@ -1,10 +1,16 @@
 return {
+  -- set versions off for now while lua_ls update becomes stable
+  { "folke/lazy.nvim", version = false },
   {
     "LazyVim/LazyVim",
+    version = false,
     opts = {
       colorscheme = "tokyonight-storm",
     },
   },
+  { "neovim/nvim-lspconfig", version = false },
+  { "williamboman/mason-lspconfig.nvim", version = false },
+  { "williamboman/mason.nvim", version = false },
 
   { "akinsho/bufferline.nvim", enabled = false },
   { "ggandor/leap.nvim", enabled = false },

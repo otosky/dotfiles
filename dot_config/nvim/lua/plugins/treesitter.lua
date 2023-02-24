@@ -17,7 +17,7 @@ return {
       "vim",
       "yaml",
       "lua",
-      "terraform",
+      "hcl",
       "scala",
       "sql",
       "rust",

@@ -9,14 +9,15 @@ set -gx fish_greeting
 set -gx POETRY_VIRTUALENVS_IN_PROJECT 'true'
 set -gx DIRENV_LOG_FORMAT ''
 
-set-java-home
 
 # interactive things
 status is-interactive || exit
 
+source ~/.asdf/asdf.fish
 fish_add_path $HOME/bin/
 fish_add_path $HOME/.krew/bin
-source ~/.asdf/asdf.fish
+fish_add_path (dirname (asdf which cargo))
 direnv hook fish | source
+set-java-home
 
 set -gx EDITOR (which nvim)

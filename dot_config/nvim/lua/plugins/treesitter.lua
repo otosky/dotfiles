@@ -16,7 +16,6 @@ return {
       "typescript",
       "vim",
       "yaml",
-      "lua",
       "hcl",
       "scala",
       "sql",

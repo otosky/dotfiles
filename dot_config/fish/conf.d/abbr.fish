@@ -51,7 +51,7 @@ abbr tffmta 'terraform fmt -recursive'
 abbr tfp 'terraform plan'
 abbr tfv 'terraform validate'
 
-abbr fluxrs 'flux reconcile source git flux-system'
+abbr fluxrs 'flux reconcile source git home-ops-kubernetes'
 abbr fluxrk 'flux reconcile ks'
 abbr fluxpause 'flux suspend'
 abbr fluxplay 'flux resume'

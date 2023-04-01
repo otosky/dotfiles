@@ -1,0 +1,136 @@
+{
+  "layer": "top",
+  "gtk-layer-shell": "true",
+  "margin-bottom": -10,
+  "height": 58,
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "network",
+    "cpu",
+    "disk",
+    "memory",
+    "pulseaudio",
+    "battery",
+    "tray",
+    "custom/power"
+  ],
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
+  "sway/workspaces": {
+    "all-outputs": true,
+    "format": "{icon} {index}",
+    "format-icons": {
+      "1": "<span size='large'></span>",
+      "2": "<span size='large'></span>",
+      "3": "<span size='large'></span>",
+      "default": ""
+    }
+  },
+  "sway/window": {
+    "format": "{}",
+    "max-length": 45,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "🌎 $1",
+      "(.*) - zsh": "> [$1]"
+    },
+    "tooltip": false
+  },
+  "sway/language": {
+    "format": "{short}  "
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "timezone": "America/New_York",
+    "format": " {:%b %d %H:%M} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%A, %B %d, %Y} ",
+    "on-click": ""
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": " {percent}%"
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false,
+    "interval": 1,
+    "on-click": ""
+  },
+  "memory": {
+    "format": "{used:0.1f}  ",
+    "interval": 2,
+    "on-click": ""
+  },
+  "disk": {
+    "interval": 30,
+    "format": "{percentage_used}% ",
+    "path": "/",
+    "on-click": ""
+  },
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "睊 Not connected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{essid} {signalStrength}%"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
+    "format-bluetooth-muted": "  {volume}% {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "tooltip-format": "{desc}, {volume}%",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-middle": "pavucontrol"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "custom/power": {
+    "format": "",
+    "on-click": "rofi -show p -modi p:rofi-power-menu -width 20 -lines 6",
+    "on-click-right": "killall -9 rofi",
+    "tooltip": false
+  }
+}

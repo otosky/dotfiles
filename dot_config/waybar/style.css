@@ -1,207 +1,240 @@
-
-@keyframes blink-warning {
-    70% {
-        color: @light;
-    }
-
-    to {
-        color: @light;
-        background-color: @warning;
-    }
-}
-
-@keyframes blink-critical {
-    70% {
-      color: @light;
-    }
-
-    to {
-        color: @light;
-        background-color: @critical;
-    }
-}
-
-
-/* -----------------------------------------------------------------------------
- * Styles
- * -------------------------------------------------------------------------- */
-
-/* COLORS */
-
-/* Nord */
-@define-color bg #353C4A;
-@define-color light #eceff4;
-@define-color dark #2e3440;
-@define-color warning #ebcb8b;
-@define-color critical #d08770;
-@define-color mode #4c566a;
-@define-color workspaces @bg;
-@define-color workspacesfocused #434C5E;
-@define-color tray @workspacesfocused;
-@define-color sound #46536A;
-@define-color network #5D7096;
-@define-color memory #546484;
-@define-color cpu #596A8D;
-@define-color temp #4D5C78;
-@define-color layout #5e81ac;
-@define-color battery #88c0d0;
-@define-color date #2e3440;
-@define-color time #3A4253;
-@define-color backlight #3F495D;
-
-/* Reset all styles */
 * {
-    border: none;
-    border-radius: 0;
-    min-height: 0;
-    margin: 0;
-    padding: 0;
+  border: none;
+  font-family: JetBrains Mono, "Font Awesome 5 Free";
+  font-size: 12px;
+  font-weight: bold;
+  min-height: 0;
 }
 
-/* The whole bar */
-#waybar {
-    background: transparent;
-    color: @light;
-    font-family: Hasklig ExtraLight;
-    font-size: 11px;
-    font-weight: bold;
+window#waybar {
+  background-color: transparent;
 }
 
-/* Each module */
-#battery,
-#clock,
-#cpu,
-#custom-layout,
-#memory,
-#mode,
-#network,
-#pulseaudio,
-#temperature,
-#custom-alsa,
-#tray,
-#backlight {
-    padding-left: 10px;
-    padding-right: 10px;
+window > box {
+  background: rgba(26, 27, 38, 1);
+  border-radius: 10px;
+  min-width: 46px;
+  margin: 10px;
+  background-clip: border-box;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25), 0 1px 3px 1px rgba(0, 0, 0, 0.25),
+    0 2px 6px 2px rgba(0, 0, 0, 0.25);
 }
 
-/* Each module that should blink */
-#mode,
-#memory,
-#temperature,
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#taskbar {
+  background: #1a1b26;
+  padding: 0 0.6em;
+  margin-right: 10px;
+  margin-left: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  color: #ebdbb2;
 }
 
-/* Each critical module */
-#memory.critical,
-#cpu.critical,
-#temperature.critical,
-#battery.critical {
-    color: @critical;
+#taskbar button {
+  border-radius: 10px;
+  background: #24283b;
+  color: #a89984;
+  margin-right: 6px;
 }
 
-/* Each critical that should blink */
-#mode,
-#memory.critical,
-#temperature.critical,
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
+#taskbar button.minimized {
+  border-radius: 10px;
+  background: #24283b;
+  color: #a89984;
 }
 
-/* Each warning */
-#network.disconnected,
-#memory.warning,
-#cpu.warning,
-#temperature.warning,
-#battery.warning {
-    color: @warning;
+#taskbar button.active {
+  border-radius: 10px;
+  background: #4e635b;
+  color: #ebdbb2;
 }
 
-/* Each warning that should blink */
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-/* And now modules themselves in their respective order */
-
-#mode { /* Shown current Sway mode (resize etc.) */
-	color: @light;
-	background: @mode;
-}
-
-/* Workspaces stuff */
-
-#workspaces {
-    margin-right: 10px;
-}
-
-
-#workspaces button {
-	font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
-	padding-left: 5px;
-	padding-right: 5px;
-	color: @light;
-	/*background: @workspaces;*/
-}
-
-#workspaces button.focused {
-    background: @workspacesfocused;
-}
-
-#workspaces button.urgent {
-	border-color: #c9545d;
-	color: #c9545d;
-}
-
-#window {
-	margin-right: 40px;
-	margin-left: 40px;
-}
-
-#network {
-    /*background: @network;*/
+#disk {
+  color: #89ddff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 #memory {
-    /*background: @memory;*/
+  color: #c792ea;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 #cpu {
-    /*background: @cpu;*/
-}
-
-#temperature {
-    /*background: @temp;*/
+  color: #ffcb6b;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 #battery {
-    /*background: @battery;*/
+  color: #c3e88d;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-#backlight {
-	/*background: @backlight;*/
+#temperature {
+  color: #c792ea;
 }
 
-#clock.date {
-    /*background: @date;*/
-}
-
-#clock.time {
-    /*background: @time;*/
-}
-
-#pulseaudio { /* Unsused but kept for those who needs it */
-    /*background: @sound;*/
+#pulseaudio {
+  color: #ffcb6b;
+  background-color: #24283b;
+  padding: 0px 10px;
+  margin: 5px 5px 5px 2px;
+  border-radius: 10px;
 }
 
 #pulseaudio.muted {
-    /* No styles */
+  background-color: #f07178;
 }
 
+#custom-kernel {
+  color: #82aaff;
+  background-color: #24283b;
+  padding: 0px 10px;
+  margin: 5px 5px 5px 6px;
+  border-radius: 10px;
+}
+
+#custom-weather {
+  color: #89ddff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#temperature {
+  color: #c792ea;
+}
+
+#temperature.critical {
+  background-color: #f07178;
+  color: #1a1b26;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#workspaces,
+#clock,
+#custom-power,
+#window,
+#custom-window,
+#disk,
+#cpu,
+#memory,
+#battery,
 #tray {
-	/*background: @tray;*/
+  background-color: #24283b;
+  padding: 0 10px;
+  margin: 5px 5px 5px 5px;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+
+#workspaces button {
+  padding: 0 4px;
+  min-width: 18px;
+  color: #82aaff;
+}
+
+#custom-network {
+  color: #f07178;
+  background-color: #1a1b26;
+}
+
+#custom-dunst {
+  color: #c792ea;
+}
+
+#custom-dot {
+  color: #38384d;
+  font-size: 17px;
+  background-color: transparent;
+}
+
+#workspaces button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+  color: #c792ea;
+}
+
+#workspaces button.focused {
+  color: #c792ea;
+}
+
+#workspaces button.urgent {
+  color: #f07178;
+}
+
+#memory {
+  color: #c792ea;
+}
+
+#custom-media {
+  background-color: #c792ea;
+  color: #1a1b26;
+}
+
+#custom-fans {
+  color: #f07178;
+}
+
+#clock {
+  color: #82aaff;
+}
+
+#mode {
+  color: #ffcb6b;
+}
+
+#window {
+  color: #c3e88d;
+  /*color: #b0bec5;*/
+  background-color: transparent;
+}
+
+#custom-power {
+  color: #f25287;
+  background-color: #1a1b26;
+}
+
+#custom-arch {
+  font-size: 20px;
+  color: #1793d1;
+  background-color: transparent;
+}
+
+#custom-gentoo {
+  font-size: 19px;
+  color: #c778dd;
+  background-color: #1a1b26;
+}
+
+@keyframes blink {
+  to {
+    background-color: #1a1b26;
+    color: #f07178;
+  }
+}
+
+#network {
+  color: #c792ea;
+}
+
+#network.disconnected {
+  background-color: #f07178;
+  color: #1a1b26;
 }

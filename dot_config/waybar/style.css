@@ -52,56 +52,22 @@ window > box {
 
 #disk {
   color: #89ddff;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 #memory {
   color: #c792ea;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 #cpu {
   color: #ffcb6b;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 #battery {
   color: #c3e88d;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 #temperature {
   color: #c792ea;
-}
-
-#pulseaudio {
-  color: #ffcb6b;
-  background-color: #24283b;
-  padding: 0px 10px;
-  margin: 5px 5px 5px 2px;
-  border-radius: 10px;
-}
-
-#pulseaudio.muted {
-  background-color: #f07178;
-}
-
-#custom-kernel {
-  color: #82aaff;
-  background-color: #24283b;
-  padding: 0px 10px;
-  margin: 5px 5px 5px 6px;
-  border-radius: 10px;
-}
-
-#custom-weather {
-  color: #89ddff;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 #temperature {
@@ -111,6 +77,14 @@ window > box {
 #temperature.critical {
   background-color: #f07178;
   color: #1a1b26;
+}
+
+#pulseaudio {
+  color: #ffcb6b;
+}
+
+#pulseaudio.muted {
+  background-color: #f07178;
 }
 
 @keyframes gradient {
@@ -129,14 +103,20 @@ window > box {
 #clock,
 #custom-power,
 #window,
-#custom-window,
 #disk,
 #cpu,
 #memory,
 #battery,
+#network,
 #tray {
+  padding: 0 5px;
+  margin: 2px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
   background-color: #24283b;
-  padding: 0 10px;
   margin: 5px 5px 5px 5px;
   border-radius: 10px;
   background-clip: padding-box;
@@ -146,21 +126,6 @@ window > box {
   padding: 0 4px;
   min-width: 18px;
   color: #82aaff;
-}
-
-#custom-network {
-  color: #f07178;
-  background-color: #1a1b26;
-}
-
-#custom-dunst {
-  color: #c792ea;
-}
-
-#custom-dot {
-  color: #38384d;
-  font-size: 17px;
-  background-color: transparent;
 }
 
 #workspaces button:hover {
@@ -183,15 +148,6 @@ window > box {
   color: #c792ea;
 }
 
-#custom-media {
-  background-color: #c792ea;
-  color: #1a1b26;
-}
-
-#custom-fans {
-  color: #f07178;
-}
-
 #clock {
   color: #82aaff;
 }
@@ -211,17 +167,6 @@ window > box {
   background-color: #1a1b26;
 }
 
-#custom-arch {
-  font-size: 20px;
-  color: #1793d1;
-  background-color: transparent;
-}
-
-#custom-gentoo {
-  font-size: 19px;
-  color: #c778dd;
-  background-color: #1a1b26;
-}
 
 @keyframes blink {
   to {

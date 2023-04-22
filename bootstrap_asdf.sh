@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# install asdf
+if [ ! -d "{{ .chezmoi.homeDir }}/.asdf" ]; then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+fi
+
 # neovim
 if asdf list | grep -q '0.6.1'; then
   echo 'Neovim 0.6.1 already installed via asdf'

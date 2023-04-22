@@ -9,7 +9,7 @@ function __auto_source_venv --on-variable PWD --description "Activate/Deactivate
   if git rev-parse --show-toplevel &>/dev/null
     set gitdir (realpath (git rev-parse --show-toplevel))
   else
-    set gitdir ""
+    set gitdir (pwd)
   end
 
   # If venv is not activated or a different venv is activated and venv exist.

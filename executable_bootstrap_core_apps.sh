@@ -15,7 +15,6 @@ sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https:/
 
 sudo dnf config-manager --set-enabled google-chrome
 
-sudo dnf copr enable eddsalkield/swaylock-effects -y
 sudo dnf copr enable @kicad/kicad -y
 
 # Core utilities
@@ -31,7 +30,7 @@ sudo dnf update -y && sudo dnf install -y \
   neofetch \
   openssl-devel bzip2-devel libffi-devel zlib-devel readline-devel sqlite \
   lxpolkit \
-  sway ulauncher wofi mako waybar wlsunset swayidle swaylock-effects light wl-clipboard maim \
+  sway ulauncher wofi mako waybar wlsunset swayidle light wl-clipboard maim \
   pulseaudio-utils \
   acpid.x86_64 \
   libappindicator \

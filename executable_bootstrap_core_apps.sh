@@ -28,7 +28,7 @@ sudo dnf update -y && sudo dnf install -y \
   age \
   direnv \
   neofetch \
-  openssl-devel bzip2-devel libffi-devel zlib-devel readline-devel sqlite \
+  openssl-devel bzip2-devel libffi-devel zlib-devel readline-devel sqlite patch \
   lxpolkit \
   sway ulauncher wofi mako waybar wlsunset swayidle light wl-clipboard maim \
   pulseaudio-utils \

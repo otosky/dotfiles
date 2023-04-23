@@ -5,7 +5,7 @@ sudo dnf install -y \
   aerc w3m \
   google-chrome-stable \
   brave-browser \
-  podman-docker docker-compose containerd.io \
+  podman-docker docker-compose \
   1password \
   kicad \
   wxGTK wxGTK-devel wxGTK-gl wxGTK-media \
@@ -28,6 +28,5 @@ if [ ! -f "$(which dragon)" ]; then
   cd {{ .chezmoi.homeDir }}
 fi
 
-sudo systemctl enable containerd.service
 sudo systemctl enable podman.socket
 

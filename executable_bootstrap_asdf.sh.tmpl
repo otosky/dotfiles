@@ -55,6 +55,6 @@ asdf plugin add awscli
 asdf plugin-add kubectl
 
 # GHC; cuz asdf for haskell sux
-if [ ! -d {{ .chezmoi.homeDir }}/.ghcup ]; then 
+if [ ! -d "{{ .chezmoi.homeDir }}/.ghcup" ]; then 
   curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 fi

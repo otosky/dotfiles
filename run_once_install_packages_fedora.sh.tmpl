@@ -2,15 +2,11 @@
 
 {{ if eq .chezmoi.os "linux" -}}
 
-./bootstrap_core_apps.sh
+{{ .chezmoi.homeDir }}/bootstrap_core_apps.sh
 
-./bootstrap_asdf.sh
+{{ .chezmoi.homeDir }}/bootstrap_asdf.sh
 
-if [ ! -d {{ .chezmoi.homeDir }}/.ghcup ]; then 
-  curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-fi
-
-./bootstrap_extra_apps.sh
+{{ .chezmoi.homeDir }}/bootstrap_extra_apps.sh
 
 # Extra shit to install
 # renoise, reaper, pycharm, vscode, obs, gimp, obsidian, slack, zoom, signal, discord, google-drive, dropbox, intellij, balena-etcher

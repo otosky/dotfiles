@@ -10,8 +10,9 @@ if asdf list | grep -q '0.6.1'; then
   echo 'Neovim 0.6.1 already installed via asdf'
 else
   asdf plugin add neovim
-  asdf install neovim O.7.0
-  asdf global neovim 0.7.0
+  asdf install neovim O.8.3
+  asdf install neovim 0.9.0
+  asdf global neovim 0.8.3
 fi
 
 # python
@@ -23,7 +24,8 @@ asdf global python 3.9.9
 
 asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
 asdf install poetry 1.1.12
-asdf global poetry 1.1.12
+asdf install poetry 1.4.0
+asdf global poetry 1.4.0
 
 asdf plugin add java
 asdf install java adoptopenjdk-8.0.312+7
@@ -52,3 +54,7 @@ asdf plugin-add yq
 asdf plugin add awscli
 asdf plugin-add kubectl
 
+# GHC; cuz asdf for haskell sux
+if [ ! -d {{ .chezmoi.homeDir }}/.ghcup ]; then 
+  curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+fi

@@ -59,6 +59,7 @@ if [ ! -f "$(which sops)" ]; then
 fi
 
 # zsh
+echo "Installing Antigen"
 mkdir -p ~/.zsh/antigen
 sudo curl -L git.io/antigen > ~/.zsh/antigen/antigen.zsh
 

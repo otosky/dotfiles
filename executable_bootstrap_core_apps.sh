@@ -7,7 +7,6 @@ sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.co
   && sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 sudo dnf config-manager \
-    --add-repo https://download.docker.com/linux/fedora/docker-ce.repo \
     --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
 
 sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
@@ -37,6 +36,7 @@ sudo dnf update -y && sudo dnf install -y \
   acpid.x86_64 \
   libappindicator \
   libusb-devel.x86_64 \
+  cifs-utils \
   blueman
 
 chsh -s "$(which fish)"
@@ -51,6 +51,7 @@ sudo dnf install -y \
   gh \
   mpv mpv-libs mpv-devel \
   yamllint \
+  libiodbc unixODBC-devel erlang-odbc \
   wireguard-tools
 
 if [ ! -f "$(which sops)" ]; then

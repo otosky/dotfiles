@@ -5,12 +5,10 @@ sudo dnf install -y \
   aerc w3m \
   google-chrome-stable \
   brave-browser \
-  docker-ce docker-ce-cli containerd.io \
+  podman-docker docker-compose containerd.io \
   1password \
   kicad \
-  libiodbc unixODBC-devel erlang-odbc \
   wxGTK wxGTK-devel wxGTK-gl wxGTK-media \
-  cifs-utils \
   gmp-devel.x86_64 \
   brasero \
   hyperfine
@@ -30,8 +28,6 @@ if [ ! -f "$(which dragon)" ]; then
   cd {{ .chezmoi.homeDir }}
 fi
 
-sudo getent group docker || sudo groupadd docker \
-  && sudo getent group docker | grep -q "\b$USER\b" || sudo usermod -aG docker $USER
-
-sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+sudo systemctl enable podman.socket
+

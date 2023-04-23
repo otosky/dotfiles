@@ -67,3 +67,9 @@ sudo curl -L git.io/antigen > ~/.zsh/antigen/antigen.zsh
 [[ ! -f ~/.fzf.zsh ]] \
   && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
   && ~/.fzf/install --key-bindings --completion --no-update-rc
+
+# Nerd Fonts
+git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts
+cd nerd-fonts
+git sparse-checkout add patched-fonts/JetBrainsMono
+./install.sh JetBrainsMono

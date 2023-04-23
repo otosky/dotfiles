@@ -29,13 +29,13 @@ sudo dnf update -y && sudo dnf install -y \
   age \
   direnv \
   neofetch \
-  openssl-devel bzip2-devel libffi-devel zlib-devel readline-devel sqlite\
+  openssl-devel bzip2-devel libffi-devel zlib-devel readline-devel sqlite \
   lxpolkit \
   sway ulauncher wofi mako waybar wlsunset swayidle swaylock-effects light wl-clipboard maim \
   pulseaudio-utils \
   acpid.x86_64 \
   libappindicator \
-  libusb-devel.x86_64 \
+  libusb-compat-0.1-devel.x86_64 \
   cifs-utils \
   blueman
 

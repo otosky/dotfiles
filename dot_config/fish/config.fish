@@ -20,5 +20,6 @@ fish_add_path $HOME/.krew/bin
 fish_add_path (dirname (asdf which cargo))
 direnv hook fish | source
 set-java-home
+fish_ssh_agent
 
 set -gx EDITOR (which nvim)

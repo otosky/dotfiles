@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Intellij Idea
+Icon=/home/olivertosky/bin/idea-IU-213.6461.79/bin/idea.png
+Exec=env _JAVA_AWT_WM_NONREPARENTING=1 /home/olivertosky/bin/idea-IU-213.6461.79/bin/idea.sh
+Comment=The Drive to Develop
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-idea

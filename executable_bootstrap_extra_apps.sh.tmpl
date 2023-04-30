@@ -14,12 +14,17 @@ sudo dnf install -y \
   hyperfine
 
 # extras for decoding media
+sudo dnf upgrade --refresh &&
 sudo dnf install -y \
   rpmfusion-free-release-tainted \
+  rpmfusion-nonfree-release-tainted \
   libdvdcss \
-  && sudo dnf groupupdate -y multimedia \
-    --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin \
-  && sudo dnf groupupdate -y sound-and-video
+ 
+sudo dnf -y groupupdate core
+sudo dnf groupupdate -y multimedia \
+    --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf groupupdate -y sound-and-video
+sudo dnf install -y dnf-plugins-core *-firmware
 
 # dragon for drag-and-drop, necessary for certain web UIs
 if [ ! -f "$(which dragon)" ]; then
@@ -29,4 +34,14 @@ if [ ! -f "$(which dragon)" ]; then
 fi
 
 sudo systemctl enable podman.socket
+
+# flatpaks
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update
+
+flatpak install flathub com.dropbox.Client
+flatpak install flathub org.gimp.GIMP
+flatpak install flathub org.videolan.VLC
+flatpak install flathub com.obsproject.Studio
+flatpak install flathub com.github.iwalton3.jellyfin-media-player
 

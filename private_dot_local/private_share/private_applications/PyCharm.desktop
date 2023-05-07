@@ -2,8 +2,8 @@
 Version=1.0
 Type=Application
 Name=PyCharm
-Icon=/home/olivertosky/bin/pycharm-2021.3.1/bin/pycharm.png
-Exec=env _JAVA_AWT_WM_NONREPARENTING=1 /home/olivertosky/bin/pycharm-2021.3.1/bin/pycharm.sh
+Icon=/home/olivertosky/bin/pycharm-2023.1.1/bin/pycharm.svg
+Exec=env _JAVA_AWT_WM_NONREPARENTING=1 /home/olivertosky/bin/pycharm-2023.1.1/bin/pycharm.sh
 Comment=The Drive to Develop
 Categories=Development;IDE;
 Terminal=false

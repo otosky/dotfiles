@@ -49,9 +49,13 @@ asdf plugin add rust
 asdf install rust 1.69.0
 asdf global rust 1.69.0
 
+
 # utilities
 asdf plugin-add terraform
 asdf install terraform 1.1.3
+
+asdf plugin add maven
+asdf install maven 3.9.1
 
 asdf plugin-add yq
 
@@ -62,3 +66,16 @@ asdf plugin-add kubectl
 if [ ! -d "{{ .chezmoi.homeDir }}/.ghcup" ]; then 
   curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 fi
+
+if [ ! $(command -v cs) ]; then
+  curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
+  chmod +x cs
+  mv cs ~/bin/cs
+  ~/bin/cs setup
+fi
+
+#if [ ! $(command -v scala-cli) ]; then
+#  curl -fL https://github.com/Virtuslab/scala-cli/releases/latest/download/scala-cli-x86_64-pc-linux.gz | gzip -d > scala-cli
+#  chmod +x scala-cli
+#  sudo mv scala-cli ~/bin/scala-cli
+#fi

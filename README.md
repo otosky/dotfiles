@@ -9,18 +9,18 @@ sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply otosky
 Note this will try to run a bootstrap script on a Linux environment. See run_once...
 
 ## Components:
-Shell: 
-- [antidote](https://github.com/mattmc3/antidote) for plugin management
+Shell:
+- fish
 
 Terminal-themes:
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- [Nord](https://www.nordtheme.com/)
+- [Tokyo Night](https://github.com/folke/tokyonight.nvim)
 
 Toolchain Manager:
 - [asdf](https://asdf-vm.com/)
 
 ### Fedora:
-Tile Manager:
+Window Manager:
 - [sway](https://github.com/swaywm/sway)
 
 Status Bar:
@@ -40,25 +40,37 @@ Status Bar:
   - https://docs.qmk.fm/#/faq_build?id=linux-udev-rules
 
 ### MacOS:
-Tile Manager:
+Window Manager:
 - [yabai](https://github.com/koekeishiya/yabai)
 - [skhd](https://github.com/koekeishiya/skhd)
 
-Status Bar:
-- [simple-bar](https://github.com/Jean-Tinland/simple-bar)
-  - via [Ubersicht](http://tracesof.net/uebersicht/)
-
 ```sh
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# install kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
 brew install \
-  chezmoi \
-  asdf \
   homebrew/cask-fonts/font-fontawesome \
   koekeishiya/formulae/yabai \
   koekeishiya/formulae/skhd \
   git-delta \
-  fzf \
   ripgrep \
   fd \
-  tree \
-  the_silver_searcher 
+  tree
 ```
+
+#### Extra
+
+- Jetbrains products
+- flux
+- [1password](https://1password.com/downloads/mac/)
+- [Brave Browser](https://brave.com/)
+- [Raycast](https://www.raycast.com/)
+  - set hotkey to CMD+SPACE
+  - replace spotlight with Raycast
+- Slack
+- Zoom
+- Notion
+

@@ -28,6 +28,7 @@ brew install \
   openssl readline sqlite3 xz zlib libffi \
   noti \
   websocat \
+  gettext \
   just
 
 # fzf

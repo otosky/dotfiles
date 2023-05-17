@@ -59,11 +59,6 @@ if [ ! -f "$(which sops)" ]; then
   sudo dnf install -y https://github.com/mozilla/sops/releases/download/v${SOPS_VERSION}/sops-${SOPS_VERSION}-1.x86_64.rpm
 fi
 
-# zsh
-echo "Installing Antigen"
-mkdir -p ~/.zsh/antigen
-sudo curl -L git.io/antigen > ~/.zsh/antigen/antigen.zsh
-
 # fzf
 [[ ! -f ~/.fzf.zsh ]] \
   && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \

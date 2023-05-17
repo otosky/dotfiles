@@ -60,14 +60,15 @@ asdf install maven 3.9.1
 asdf plugin-add yq
 
 asdf plugin add awscli
-asdf plugin-add kubectl
+asdf plugin add kubectl
 
 # GHC; cuz asdf for haskell sux
 if [ ! -d "{{ .chezmoi.homeDir }}/.ghcup" ]; then 
   curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 fi
 
-if [ ! $(command -v cs) ]; then
+if [ ! "$(command -v cs)" ]; then
+  #curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > cs
   curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
   chmod +x cs
   mv cs ~/bin/cs

@@ -58,7 +58,10 @@ brew install \
   git-delta \
   ripgrep \
   fd \
-  tree
+  tree \
+  automake \
+  fish \
+  tmux
 ```
 
 #### Extra

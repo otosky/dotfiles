@@ -42,9 +42,9 @@ exec_always $home/.config/sway/clamshell.sh
 
 ### Idle
 exec swayidle -w \
-  timeout 600 '$lock' \
-  timeout 720 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-  timeout 1800 'systemctl suspend' \
+  timeout 300 '$lock' \
+  timeout 600 'swaymsg "output * disable"' resume 'swaymsg "output * enable"' \
+  timeout 900 'systemctl suspend' \
   before-sleep '$lock'
 
 # Status Bar:

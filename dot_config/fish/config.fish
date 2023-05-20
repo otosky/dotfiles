@@ -18,6 +18,7 @@ source ~/.asdf/asdf.fish
 fish_add_path $HOME/bin/
 fish_add_path $HOME/.krew/bin
 fish_add_path (dirname (asdf which cargo))
+fish_add_path $HOME/.local/share/coursier/bin
 direnv hook fish | source
 set-java-home
 fish_ssh_agent

@@ -9,7 +9,7 @@ set $right l
 
 set $home /home/olivertosky
 set $wallpaper $home/.config/sway/milad-fakurian-JrMz6hVQeu4-unsplash.jpg
-set $lockscreen $home/.config/sway/lockscreen.jpg
+set $lockscreen $home/.config/sway/milad-fakurian-nY14Fs8pxT8-unsplash.jpg
 
 set $term kitty
 set $menu ulauncher-toggle 

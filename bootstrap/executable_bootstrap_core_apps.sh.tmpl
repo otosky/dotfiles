@@ -69,3 +69,7 @@ git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts
 git sparse-checkout add patched-fonts/JetBrainsMono
 ./install.sh JetBrainsMono
+
+if [ ! "$(command -v flux)" ]; then
+  curl -s https://fluxcd.io/install.sh | sudo bash
+fi

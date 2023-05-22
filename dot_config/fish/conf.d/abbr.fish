@@ -62,3 +62,6 @@ abbr tmat 'tmux attach-session -t'
 abbr tml 'tmux list-sessions'
 abbr tmn 'tmux new-session'
 abbr tmns 'tmux new-session -s'
+
+abbr mux 'tmuxinator'
+abbr muxn 'tmuxinator new'

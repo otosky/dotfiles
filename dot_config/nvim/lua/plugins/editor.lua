@@ -7,6 +7,7 @@ return {
       require("nvim-surround").setup()
     end,
   },
+
   { "mechatroner/rainbow_csv" },
   { "ap/vim-css-color" },
 

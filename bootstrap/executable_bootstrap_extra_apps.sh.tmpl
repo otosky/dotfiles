@@ -11,7 +11,8 @@ sudo dnf install -y \
   wxGTK wxGTK-devel wxGTK-gl wxGTK-media \
   gmp-devel.x86_64 \
   brasero \
-  hyperfine
+  hyperfine \
+  syncthing
 
 # extras for decoding media
 sudo dnf upgrade --refresh &&
@@ -43,6 +44,7 @@ flatpak install flathub org.gimp.GIMP
 flatpak install flathub org.videolan.VLC
 flatpak install flathub com.obsproject.Studio
 flatpak install flathub com.github.iwalton3.jellyfin-media-player
+flatpak install flathub com.github.ransome1.sleek
 
 if [ ! "$(command -v rclone)" ]; then
   sudo -v ; curl https://rclone.org/install.sh | sudo bash

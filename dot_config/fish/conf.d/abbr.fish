@@ -65,3 +65,5 @@ abbr tmns 'tmux new-session -s'
 
 abbr mux 'tmuxinator'
 abbr muxn 'tmuxinator new'
+
+abbr t 'todo.sh'

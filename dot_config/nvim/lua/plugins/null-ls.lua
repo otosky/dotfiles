@@ -13,6 +13,7 @@ return {
         nls.builtins.formatting.prettier,
         nls.builtins.formatting.scalafmt,
         nls.builtins.formatting.shfmt,
+        nls.builtins.formatting.rufo,
       },
     }
   end,

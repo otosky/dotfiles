@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Logseq
 Exec=/home/olivertosky/bin/Logseq-linux-x64-0.9.13.AppImage
+Icon=/home/olivertosky/.local/share/applications/logseq.png
 Terminal=false
 Type=Application
 StartupWMClass=undefined

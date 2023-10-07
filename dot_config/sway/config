@@ -42,9 +42,9 @@ exec_always $home/.config/sway/clamshell.sh
 
 ### Idle
 exec swayidle -w \
-  timeout 300 '$lock' \
-  timeout 600 'swaymsg "output * disable"' resume 'swaymsg "output * enable"' \
-  timeout 900 'systemctl suspend' \
+  timeout 600 '$lock' \
+  timeout 900 'swaymsg "output * disable"' resume 'swaymsg "output * enable"' \
+  timeout 1200 'systemctl suspend' \
   before-sleep '$lock'
 
 # Status Bar:

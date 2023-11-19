@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=sleek
+Exec=/home/olivertosky/bin/sleek-2.0.2.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto
+Terminal=false
+Type=Application
+Icon=/home/olivertosky/.local/share/applications/sleek.png
+StartupWMClass=sleek
+Comment=todo.txt manager for Linux, Windows and MacOS, free and open-source (FOSS)
+Categories=ProjectManagement;

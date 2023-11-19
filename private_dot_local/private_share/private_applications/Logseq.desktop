@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Logseq
-Exec=/home/olivertosky/bin/Logseq-linux-x64-0.9.13.AppImage
+Exec=/home/olivertosky/bin/Logseq-linux-x64-0.9.13.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto
 Icon=/home/olivertosky/.local/share/applications/logseq.png
 Terminal=false
 Type=Application

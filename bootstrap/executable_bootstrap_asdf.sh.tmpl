@@ -62,8 +62,9 @@ if [ ! "$(command -v cs)" ]; then
   ~/bin/cs setup
 fi
 
-#if [ ! $(command -v scala-cli) ]; then
-#  curl -fL https://github.com/Virtuslab/scala-cli/releases/latest/download/scala-cli-x86_64-pc-linux.gz | gzip -d > scala-cli
-#  chmod +x scala-cli
-#  sudo mv scala-cli ~/bin/scala-cli
-#fi
+# OCaml
+if [ ! -d "/usr/local/bin/opam" ]; then
+  curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) | sh
+  opam init -y
+  opam install dune ocaml-lsp-server odoc ocamlformat utop
+fi

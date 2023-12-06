@@ -43,4 +43,18 @@ return {
       require("metals").initialize_or_attach(metals_config)
     end,
   },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        ["python"] = { "isort", "black" },
+        ["lua"] = { "stylua" },
+        ["javascript"] = { { "prettierd", "prettier" } },
+        ["scala"] = { "scalafmt" },
+        ["ruby"] = { "rufo" },
+        ["sh"] = { "shfmt" },
+      },
+    },
+  },
 }

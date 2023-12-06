@@ -54,6 +54,7 @@ return {
         ["scala"] = { "scalafmt" },
         ["ruby"] = { "rufo" },
         ["sh"] = { "shfmt" },
+        ["elixir"] = { "mix" },
       },
     },
   },

@@ -20,6 +20,7 @@ fish_add_path $HOME/.krew/bin
 fish_add_path (dirname (asdf which cargo))
 fish_add_path $HOME/.local/share/coursier/bin
 fish_add_path $HOME/.docker/bin # for macOS
+fish_add_path $HOME/.local/share/rtx/bin
 rtx activate fish | source
 eval $(opam env)
 

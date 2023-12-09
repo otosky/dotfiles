@@ -15,13 +15,14 @@ set -gx HOMEBREW_NO_AUTO_UPDATE 1
 status is-interactive || exit
 
 source ~/.asdf/asdf.fish
+# fish_add_path $HOME/.local/share/rtx/bin
+# rtx activate fish | source
+
 fish_add_path $HOME/bin/
 fish_add_path $HOME/.krew/bin
 fish_add_path (dirname (asdf which cargo))
 fish_add_path $HOME/.local/share/coursier/bin
 fish_add_path $HOME/.docker/bin # for macOS
-fish_add_path $HOME/.local/share/rtx/bin
-rtx activate fish | source
 eval $(opam env)
 
 direnv hook fish | source

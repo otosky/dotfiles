@@ -14,13 +14,13 @@ set -gx HOMEBREW_NO_AUTO_UPDATE 1
 # interactive things
 status is-interactive || exit
 
-source ~/.asdf/asdf.fish
-# fish_add_path $HOME/.local/share/rtx/bin
-# rtx activate fish | source
+# source ~/.asdf/asdf.fish
+fish_add_path $HOME/.local/share/rtx/bin
+rtx activate fish | source
 
 fish_add_path $HOME/bin/
 fish_add_path $HOME/.krew/bin
-fish_add_path (dirname (asdf which cargo))
+fish_add_path (dirname (rtx which cargo))
 fish_add_path $HOME/.local/share/coursier/bin
 fish_add_path $HOME/.docker/bin # for macOS
 eval $(opam env)
@@ -29,4 +29,4 @@ direnv hook fish | source
 set-java-home
 fish_ssh_agent
 
-set -gx EDITOR (which nvim)
+set -gx EDITOR (rtx which nvim)

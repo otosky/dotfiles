@@ -22,6 +22,7 @@ fish_add_path $HOME/bin/
 fish_add_path $HOME/.krew/bin
 fish_add_path (dirname (rtx which cargo))
 fish_add_path $HOME/.local/share/coursier/bin
+fish_add_path $HOME/.ghcup/bin
 fish_add_path $HOME/.docker/bin # for macOS
 eval $(opam env)
 

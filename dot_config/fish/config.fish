@@ -27,7 +27,6 @@ fish_add_path $HOME/.docker/bin # for macOS
 eval $(opam env)
 
 direnv hook fish | source
-set-java-home
 fish_ssh_agent
 
 set -gx EDITOR (rtx which nvim)

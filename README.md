@@ -77,3 +77,16 @@ brew install \
 - Zoom
 - Notion
 
+### Windows (sigh)
+
+1. [install WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+2. install nerdfonts
+3. install windows terminal from microsoft store
+4. set wsl distro as main terminal in windows terminal
+5. set windows terminal as default terminal
+6. install [Microsoft Powertoys](https://learn.microsoft.com/en-us/windows/powertoys/install)
+7. swap capslock to ctrl
+8. disable touchpad features
+9. set multitasking settings to show tasks from `All Desktops`
+10. run ~/bootstrap/bootstrap_wsl.sh
+11. init chezmoi

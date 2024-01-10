@@ -10,13 +10,13 @@ fix_wsl_resolv_conf() {
 }
 
 install_mise() {
-	if [ ! command -v mise ]; then
+	if [ ! "$(command -v mise)" ]; then
 		curl https://mise.jdx.dev/install.sh | sh
 	fi
 }
 
 install_fish() {
-	if [ ! command -v fish ]; then
+	if [ ! "$(command -v fish)" ]; then
 		sudo apt-add-repository ppa:fish-shell/release-3
 		sudo apt update && sudo apt upgrade
 		sudo apt install fish

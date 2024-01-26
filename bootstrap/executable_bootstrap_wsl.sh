@@ -28,8 +28,9 @@ bootstrap_dotfiles() {
 }
 
 install_essential() {
-	sudo apt install \
-		build-essential
+	sudo apt install -y \
+		build-essential \
+    unzip
 }
 
 main() {

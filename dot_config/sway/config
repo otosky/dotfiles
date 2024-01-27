@@ -11,7 +11,7 @@ set $home /home/olivertosky
 set $wallpaper $home/.config/sway/milad-fakurian-JrMz6hVQeu4-unsplash.jpg
 set $lockscreen $home/.config/sway/milad-fakurian-nY14Fs8pxT8-unsplash.jpg
 
-set $term kitty
+set $term $home/bin/wezterm
 set $menu ulauncher-toggle 
 set $menu_wofi wofi --show drun --no-actions --insensitive --prompt 'Run' | xargs swaymsg exec --
 set $browser brave-browser --enable-features=UseOzonePlatform --ozone-platform=wayland

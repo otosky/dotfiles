@@ -20,7 +20,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 
 	--- Set Pwsh as the default on Windows
 	config.default_domain = "WSL:Ubuntu"
--- Non-Windows config
+	-- Non-Windows config
 else
 end
 
@@ -82,6 +82,7 @@ config.default_cursor_style = "BlinkingUnderline"
 config.disable_default_key_bindings = false
 config.window_background_opacity = 0.9
 config.mouse_bindings = mouse_bindings
+config.check_for_updates = false
 
 -- Allow overwriting for work stuff
 if haswork then

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=sleek
-Exec=/home/olivertosky/bin/sleek-2.0.8.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto
+Exec=/home/olivertosky/bin/sleek-2.0.9.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto
 Terminal=false
 Type=Application
 Icon=/home/olivertosky/.local/share/applications/sleek.png

@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=Logseq
-Exec=/home/olivertosky/bin/Logseq-linux-x64-0.9.13.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto
+Exec=/home/olivertosky/bin/Logseq-linux-x64-0.10.6.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto
 Icon=/home/olivertosky/.local/share/applications/logseq.png
 Terminal=false
 Type=Application
 StartupWMClass=undefined
-X-AppImage-Version=0.9.13
+X-AppImage-Version=0.10.6
 Comment=A privacy-first, open-source platform for knowledge management and collaboration.
 Categories=Utility
 MimeType=x-scheme-handler/logseq;text/html;

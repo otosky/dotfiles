@@ -4,7 +4,7 @@ set -gx POETRY_VIRTUALENVS_IN_PROJECT true
 set -gx DIRENV_LOG_FORMAT ''
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
 set -gx MISE_ENV_FILE .env
-set -gx DEVBOX_NO_PROMPT true
+set -gx devbox_no_prompt true
 
 # interactive things
 status is-interactive || exit

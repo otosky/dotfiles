@@ -1,4 +1,29 @@
 {
-    "vim.vimrc.enable": true,
-    "vim.leader": " "
+  "vim.vimrc.enable": true,
+  "vim.leader": " ",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish",
+      "args": [
+        "-i",
+        "-c",
+        "devbox shell"
+      ]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  }
 }

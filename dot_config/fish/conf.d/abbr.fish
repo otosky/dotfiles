@@ -1,12 +1,12 @@
 #! /usr/bin/fish
 
-abbr vi "nvim"
+abbr vi nvim
 abbr icat "kitty +kitten icat"
 abbr wgup "wg-quick up wg0"
 abbr wgdown "wg-quick down wg0"
 abbr lsa "ls -a"
 
-abbr cdr 'z'
+abbr cdr z
 
 abbr ga 'git add'
 abbr gaa 'git add --all'
@@ -32,17 +32,17 @@ abbr gwta 'git worktree add'
 abbr gwtl 'git worktree list'
 abbr gwtr 'git worktree remove'
 
-abbr k 'kubectl'
+abbr k kubectl
 abbr kn 'kubectl ns'
 abbr kgn 'kubectl get nodes'
 abbr kgp 'kubectl get pods'
 abbr kl 'kubectl logs'
-abbr ku 'k9s'
+abbr ku k9s
 
 # think "rc-edit":
 abbr rce 'chezmoi edit'
 # think "rc-yes":
-abbr rcy 'chezmoi apply'  
+abbr rcy 'chezmoi apply'
 abbr rccd 'cd ~/.local/share/chezmoi' # I don't like how chezmoi cd spawns a subshell
 abbr rca 'chezmoi add'
 
@@ -56,14 +56,16 @@ abbr fluxrk 'flux reconcile ks'
 abbr fluxpause 'flux suspend'
 abbr fluxplay 'flux resume'
 
-abbr tm 'tmux'
+abbr tm tmux
 abbr tma 'tmux attach-session'
 abbr tmat 'tmux attach-session -t'
 abbr tml 'tmux list-sessions'
 abbr tmn 'tmux new-session'
 abbr tmns 'tmux new-session -s'
 
-abbr mux 'tmuxinator'
+abbr mux tmuxinator
 abbr muxn 'tmuxinator new'
 
 abbr t 'todo.sh'
+
+abbr lg lazygit

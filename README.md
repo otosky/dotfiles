@@ -41,28 +41,9 @@ Status Bar:
 
 ### MacOS:
 Window Manager:
-- [yabai](https://github.com/koekeishiya/yabai)
-- [skhd](https://github.com/koekeishiya/skhd)
+- [AeroSpace](https://github.com/nikitabobko/AeroSpace)
 
-```sh
-# install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# install kitty
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-
-brew install \
-  homebrew/cask-fonts/font-fontawesome \
-  koekeishiya/formulae/yabai \
-  koekeishiya/formulae/skhd \
-  git-delta \
-  ripgrep \
-  fd \
-  tree \
-  automake \
-  fish \
-  tmux
-```
+see `./bootstrap/executable_bootstrap_macos.sh`
 
 #### Extra
 
@@ -82,11 +63,9 @@ brew install \
 1. [install WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 2. install nerdfonts
 3. install windows terminal from microsoft store
-4. set wsl distro as main terminal in windows terminal
-5. set windows terminal as default terminal
-6. install [Microsoft Powertoys](https://learn.microsoft.com/en-us/windows/powertoys/install)
-7. swap capslock to ctrl
-8. disable touchpad features
-9. set multitasking settings to show tasks from `All Desktops`
-10. run ~/bootstrap/bootstrap_wsl.sh
-11. init chezmoi
+4. install wezterm
+5. install [Microsoft Powertoys](https://learn.microsoft.com/en-us/windows/powertoys/install)
+6. disable touchpad features
+7. set multitasking settings to show tasks from `All Desktops`
+8. run ~/bootstrap/bootstrap_wsl.sh
+9. init chezmoi

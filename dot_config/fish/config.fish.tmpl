@@ -11,7 +11,7 @@ status is-interactive || exit
 
 {{ if eq .chezmoi.os "darwin" }}
 fish_add_path /opt/homebrew/bin
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval (/opt/homebrew/bin/brew shellenv)
 {{ end }}
 
 fish_add_path $HOME/.local/bin

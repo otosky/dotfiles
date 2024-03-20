@@ -5,16 +5,8 @@ if [ ! "$(command -v brew)" ]; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# install kitty
-
-if [ ! "$(command -v kitty)" ]; then
-	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-fi
-
-brew install \
+/opt/homebrew/bin/brew install \
 	homebrew/cask-fonts/font-fontawesome \
-	koekeishiya/formulae/yabai \
-	koekeishiya/formulae/skhd \
 	git-delta \
 	ripgrep \
 	fd \
@@ -29,11 +21,19 @@ brew install \
 	noti \
 	websocat \
 	gettext \
-	just \
-	todo-txt
+	lazygit
 
 # fzf
 if [ ! "$(command -v fzf)" ]; then
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
 		~/.fzf/install --key-bindings --completion --no-update-rc
 fi
+
+# install fish and set as default shell
+sudo echo '/opt/homebrew/bin/fish' >>/etc/shells
+eval $SHELL
+sudo chsh -s /opt/homebrew/bin/fish
+
+# install fish deps
+/usr/bin/env fish fisher_install
+/usr/bin/env fish fisher update

@@ -9,7 +9,11 @@ set -gx devbox_no_prompt true
 # interactive things
 status is-interactive || exit
 
-# source ~/.asdf/asdf.fish
+{{ if eq .chezmoi.os "darwin" }}
+fish_add_path /opt/homebrew/bin
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+{{ end }}
+
 fish_add_path $HOME/.local/bin
 mise activate fish | source
 

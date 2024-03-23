@@ -1,1 +1,9 @@
 README.md
+
+docs/**
+mkdocs.yaml
+pyproject.toml
+poetry.lock
+
+.venv/**
+

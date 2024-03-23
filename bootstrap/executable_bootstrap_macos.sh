@@ -5,6 +5,11 @@ if [ ! "$(command -v brew)" ]; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# install devbox, which will implicitly install nix pkg manager
+if [ ! "$(command -v devbox)" ]; then
+  curl -fsSL https://get.jetpack.io/devbox | bash
+fi
+
 /opt/homebrew/bin/brew install \
 	homebrew/cask-fonts/font-fontawesome \
 	git-delta \

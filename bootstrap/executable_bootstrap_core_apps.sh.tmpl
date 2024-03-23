@@ -77,3 +77,8 @@ git sparse-checkout add patched-fonts/JetBrainsMono
 if [ ! "$(command -v flux)" ]; then
   curl -s https://fluxcd.io/install.sh | sudo bash
 fi
+
+if [ ! "$(command -v devbox)" ]; then
+  curl -fsSL https://get.jetpack.io/devbox | bash
+fi
+

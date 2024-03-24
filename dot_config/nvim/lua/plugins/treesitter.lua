@@ -28,6 +28,7 @@ return {
       "dockerfile",
       "haskell",
       "java",
+      "just",
     },
   },
 }

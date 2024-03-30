@@ -6,6 +6,7 @@ set -gx DIRENV_LOG_FORMAT ''
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
 set -gx MISE_ENV_FILE .env
 set -gx devbox_no_prompt true
+set -gx EDITOR nvim
 
 # interactive things
 status is-interactive || exit
@@ -31,8 +32,7 @@ end
 #  source $HOME/.nix-profile/etc/profile.d/nix.fish
 # end
 
-
 #direnv hook fish | source
 fish_ssh_agent
 
-set -gx EDITOR nvim
+zoxide init fish | source

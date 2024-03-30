@@ -1,3 +1,4 @@
+# vim: set ft=fish:
 set -gx fish_key_bindings fish_vi_key_bindings
 set -gx fish_greeting
 set -gx POETRY_VIRTUALENVS_IN_PROJECT true
@@ -26,8 +27,12 @@ fish_add_path $HOME/.docker/bin # for macOS
 if command -q opam
     eval $(opam env)
 end
+# if test -e $HOME/.nix-profile/etc/profile.d/nix.fish
+#  source $HOME/.nix-profile/etc/profile.d/nix.fish
+# end
+
 
 #direnv hook fish | source
 fish_ssh_agent
 
-set -gx EDITOR (mise which nvim)
+set -gx EDITOR nvim

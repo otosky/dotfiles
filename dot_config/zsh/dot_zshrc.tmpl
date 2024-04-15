@@ -48,12 +48,6 @@ export EDITOR="$(which nvim)"
 # python/poetry
 export POETRY_VIRTUALENVS_IN_PROJECT=true
 
-###### HOOKS ######
-eval "$(direnv hook zsh)"
-export DIRENV_LOG_FORMAT=
-
-export AUTOENV_FILE_LEAVE=.autoenv.zsh
-
 ###### KEYBINDS ######
 bindkey -M viins '^j' fzf-cd-widget
 

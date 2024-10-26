@@ -1,5 +1,8 @@
 # My Dotfiles
 
+> [!CAUTION]
+> I no longer use this and have moved onto Nix and Home Manager in [nix-config](https://github.com/otosky/nix-config)
+
 Managed via [`chezmoi`](https://github.com/twpayne/chezmoi)
 
 ## Install
